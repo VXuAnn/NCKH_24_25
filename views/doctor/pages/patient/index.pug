@@ -1,0 +1,282 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-sm-4.col-3
+            h4.page-title Patients
+          .col-sm-8.col-9.text-right.m-b-20
+            a.btn.btn.btn-primary.btn-rounded.float-right(href=`/${prefixAdmin}/blog/add`)
+              i.fa.fa-plus
+              |  Add Patient
+        .row
+          .col-md-12
+            .table-responsive
+              table.table.table-border.table-striped.custom-table.datatable.mb-0
+                thead
+                  tr
+                    th Name
+                    th Age
+                    th Address
+                    th Phone
+                    th Email
+                    th.text-right Action
+                tbody
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Jennifer Robinson
+                    td 35
+                    td 1545 Dorsey Ln NE, Leland, NC, 28451
+                    td (207) 808 8863
+                    td jenniferrobinson@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Terry Baker
+                    td 63
+                    td 555 Front St #APT 2H, Hempstead, NY, 11550
+                    td (376) 150 6975
+                    td terrybaker@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Kyle Bowman
+                    td 7
+                    td 5060 Fairways Cir #APT 207, Vero Beach, FL, 32967
+                    td (981) 756 6128
+                    td kylebowman@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Marie Howard
+                    td 22
+                    td 3501 New Haven Ave #152, Columbia, MO, 65201
+                    td (634) 09 3833
+                    td mariehoward@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Joshua Guzman
+                    td 34
+                    td 4712 Spring Creek Dr, Bonita Springs, FL, 34134
+                    td (407) 554 4146
+                    td joshuaguzman@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Julia Sims
+                    td 27
+                    td 517 Walker Dr, Houma, LA, 70364, United States
+                    td (680) 432 2662
+                    td juliasims@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Linda Carpenter
+                    td 24
+                    td 2226 Victory Garden Ln, Tallahassee, FL, 32301
+                    td (218) 661 8316
+                    td lindacarpenter@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Melissa Burton
+                    td 35
+                    td 3321 N 26th St, Milwaukee, WI, 53206
+                    td (192) 494 8073
+                    td melissaburton@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Patrick Knight
+                    td 21
+                    td Po Box 3336, Commerce, TX, 75429
+                    td (785) 580 4514
+                    td patrickknight@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Denise Stevens
+                    td 7
+                    td 1603 Old York Rd, Abington, PA, 19001
+                    td (836) 257 1379
+                    td denisestevens@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Judy Clark
+                    td 22
+                    td 4093 Woodside Circle, Pensacola, FL, 32514
+                    td (359) 969 3594
+                    td judy.clark@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Dennis Salazar
+                    td 34
+                    td 891 Juniper Drive, Saginaw, MI, 48603
+                    td (933) 137 6201
+                    td dennissalazar@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Charles Ortega
+                    td 32
+                    td 3169 Birch Street, El Paso, TX, 79915
+                    td (380) 141 1885
+                    td charlesortega@example.com
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-patient.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_patient')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+                  tr
+                    td
+                      img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                      |  Sandra Mendez
+                    td 24
+                    td 2535 Linden Avenue, Orlando, FL, 32789
+                    td (797) 506 1265
+                    td sandramendez@example.com
+  .sidebar-overlay(data-reff='')
+

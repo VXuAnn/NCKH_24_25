@@ -1,0 +1,109 @@
+extends ../../layouts/default.pug
+
+block main
+  .page-wrapper
+    .content
+      .row
+        .col-sm-5.col-4
+          h4.page-title Payslip
+        .col-sm-7.col-8.text-right.m-b-30
+          .btn-group.btn-group-sm
+            button.btn.btn-white CSV
+            button.btn.btn-white PDF
+            button.btn.btn-white
+              i.fa.fa-print.fa-lg
+              |  Print
+      .row
+        .col-md-12
+          .card-box
+            h4.payslip-title Payslip for the month of July 2018
+            .row
+              .col-sm-6.m-b-20
+                img.inv-logo(src='assets/img/logo-dark.png' alt='')
+                ul.list-unstyled.mb-0
+                  li PreClinic
+                  li 3864 Quiet Valley Lane,
+                  li Sherman Oaks, CA, 91403
+              .col-sm-6.m-b-20
+                .invoice-details
+                  h3.text-uppercase Payslip #49029
+                  ul.list-unstyled
+                    li
+                      | Salary Month: 
+                      span July, 2018
+            .row
+              .col-lg-12.m-b-20
+                ul.list-unstyled
+                  li
+                    h5.mb-0
+                      strong Albina Simonis
+                  li
+                    span Nurse
+                  li Employee ID: NS-0001
+                  li Joining Date: 7 May 2015
+            .row
+              .col-sm-6
+                div
+                  h4.m-b-10
+                    strong Earnings
+                  table.table.table-bordered
+                    tbody
+                      tr
+                        td
+                          strong Basic Salary
+                          span.float-right $6500
+                      tr
+                        td
+                          strong House Rent Allowance (H.R.A.)
+                          span.float-right $55
+                      tr
+                        td
+                          strong Conveyance
+                          span.float-right $55
+                      tr
+                        td
+                          strong Other Allowance
+                          span.float-right $55
+                      tr
+                        td
+                          strong Total Earnings
+                          span.float-right
+                            strong $55
+              .col-sm-6
+                div
+                  h4.m-b-10
+                    strong Deductions
+                  table.table.table-bordered
+                    tbody
+                      tr
+                        td
+                          strong Tax Deducted at Source (T.D.S.)
+                          span.float-right $0
+                      tr
+                        td
+                          strong Provident Fund
+                          span.float-right $0
+                      tr
+                        td
+                          strong ESI
+                          span.float-right $0
+                      tr
+                        td
+                          strong Loan
+                          span.float-right $300
+                      tr
+                        td
+                          strong Total Deductions
+                          span.float-right
+                            strong $59698
+              .col-sm-12
+                p
+                  strong Net Salary: $59698
+                  |  (Fifty nine thousand six hundred and ninety eight only.)
+
+    .sidebar-overlay(data-reff='')
+    script(src='assets/js/jquery-3.2.1.min.js')
+    script(src='assets/js/popper.min.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery.slimscroll.js')
+    script(src='assets/js/app.js')

@@ -1,0 +1,13 @@
+mixin search(keyword)
+  form(form-search="")
+    .input-group
+      input(
+        type="text"
+        placeholder="Nhập từ khóa"
+        name="keyword"
+        class="form-control"
+        value=keyword
+        id="search-patient"
+        autocomplete="off"
+      )
+    ul#search-results(class="list-group") 

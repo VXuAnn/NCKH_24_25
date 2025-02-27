@@ -1,0 +1,33 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    .page-wrapper
+        .content
+          .row
+            .col-lg-8.offset-lg-2
+              h4.page-title Edit Role
+          .row
+            .col-lg-8.offset-lg-2
+              form (
+                action =`${prefixAdmin}/roles/edit/${record.id}?_method=PATCH`
+                method ="POST"
+              )
+                .form-group
+                  label(for="title")
+                    | Tiêu đề
+                    span.text-danger *
+                  input.form-control( type="text" class="form-control" id="tile" name="title" required value=record.tile)
+                  label(for="desc")
+                    | Mô tả
+                    span.text-danger *
+                  input.form-control( type="text" class="form-control" id="desc" name="desc" required value=record.description)
+                  .m-t-20.text-center
+                    button.btn.btn-primary.submit-btn Save
+    .sidebar-overlay(data-reff='')
+    script(src='assets/js/jquery-3.2.1.min.js')
+    script(src='assets/js/popper.min.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery.slimscroll.js')
+    script(src='assets/js/select2.min.js')
+    script(src='assets/js/app.js')
+    // edit-role24:13

@@ -1,0 +1,74 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-sm-4.col-3
+            h4.page-title Appointments
+          //- .col-sm-8.col-9.text-right.m-b-20
+          //-   a.btn.btn.btn-primary.btn-rounded.float-right(href='add-appointment.html')
+          //-     i.fa.fa-plus
+          //-     |  Add Appointment
+        .row
+          .col-md-12
+            .table-responsive
+              table.table.table-striped.custom-table
+                thead
+                  tr
+                    th Patient Name
+                    th Age
+                    th Doctor Name
+                    th Department
+                    th Appointment Date
+                    th Appointment Time
+                    th Status
+                    th.text-right Action
+                tbody
+                  each appointment in appointments
+                    tr
+                      td= appointment.patientId.fullName
+                      td= appointment.age
+                      td= appointment.doctorId.fullName
+                      td= appointment.department.title
+                      td= new Date(appointment.appointmentDate).toLocaleDateString("vi-VN")
+                      td= appointment.appointmentTime
+                      td
+                        if appointment.status === "Scheduled"
+                          span.custom-badge.status-green Scheduled
+                        else if appointment.status === "Completed"
+                          span.custom-badge.status-blue Completed
+                        else
+                          span.custom-badge.status-red Cancelled
+                      td.text-right
+                        .dropdown.dropdown-action
+                          a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                            i.fa.fa-ellipsis-v
+                          .dropdown-menu.dropdown-menu-right
+                            a.dropdown-item(href='edit-appointment.html')
+                              i.fa.fa-pencil.m-r-5
+                              |  Edit
+                            a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_appointment')
+                              i.fa.fa-trash-o.m-r-5
+                              |  Delete
+      #delete_appointment.modal.fade.delete-modal(role='dialog')
+        .modal-dialog.modal-dialog-centered
+          .modal-content
+            .modal-body.text-center
+              img(src='/assets/img/sent.png' alt='' width='50' height='46')
+              h3 Are you sure want to delete this Appointment?
+              .m-t-20
+                a.btn.btn-white(href='#' data-dismiss='modal') Close
+                button.btn.btn-danger(type='submit') Delete
+      .sidebar-overlay(data-reff='')
+      script.
+        $(function () {
+        $('#datetimepicker3').datetimepicker({
+        format: 'LT'
+        });
+        $('#datetimepicker4').datetimepicker({
+        format: 'LT'
+        });
+        });
+      // appointments23:20

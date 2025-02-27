@@ -1,0 +1,83 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            h4.page-title Add medicine
+        .row
+          .col-lg-8.offset-lg-2
+            form(
+              action=`/${prefixAdmin}/medicine/create`
+              method="POST"
+            )
+              .row
+                .col-sm-6
+                  .form-group
+                    label(for="name")
+                      | Tiêu đề
+                      span.text-danger *
+                    input.form-control(
+                      type="text"
+                      id="name"
+                      name="name"
+                      required)
+                .col-sm-6
+                  .form-group
+                    label(for="price")
+                      | Price
+                      span.text-danger *
+                    input.form-control(
+                      type="number"
+                      id="price"
+                      name="price"
+                      value="0"
+                      min="0")
+                .col-sm-6
+                  .form-group
+                    label(for="stock")
+                      | Stock
+                    input.form-control(
+                      type="number"
+                      id="stock"
+                      name="stock"
+                      value="0"
+                      min="0")
+                .col-sm-6
+                  .form-group.gender-select
+                    label.gen-label Status:
+                    .form-check-inline
+                      label.form-check-label
+                        input.form-check-input(
+                        type='radio'
+                        id="statusActive"
+                        name="status"
+                        value="active"
+                        )
+                        | Active
+                    .form-check-inline
+                      label.form-check-label
+                        input.form-check-input(type='radio'
+                        id="statusActive"
+                        name="status"
+                        value="inactive")
+                        | Inactive
+                .col-sm-6
+                  .form-group
+                    label(for="type")
+                      | Type
+                    select.form-control(name="type")
+                      each type in typemedicines 
+                        option(value=type.title) #{type.title}
+                .text-center.m-t-20
+                  button.btn.btn-primary.submit-btn(type="submit") Create
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/tagsinput.js')
+  script(src='assets/js/app.js')

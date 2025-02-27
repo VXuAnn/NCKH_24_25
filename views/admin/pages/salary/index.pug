@@ -1,0 +1,107 @@
+extends ../../layouts/default.pug
+
+block main
+  .page-wrapper
+      .content
+        .row
+          .col-sm-4.col-5
+            h4.page-title Employee Salary
+          .col-sm-8.col-7.text-right.m-b-30
+            a.btn.btn-primary.btn-rounded.float-right(href='add-salary.html')
+              i.fa.fa-plus
+              |  Add Salary
+        .row.filter-row
+          .col-sm-6.col-md-3.col-lg-3.col-xl-2.col-12
+            .form-group.form-focus
+              label.focus-label Employee Name
+              input.form-control.floating(type='text')
+          .col-sm-6.col-md-3.col-lg-3.col-xl-2.col-12
+            .form-group.form-focus.select-focus
+              label.focus-label Role
+              select.select.floating
+                option  -- Select -- 
+                option Employee
+                option Manager
+          .col-sm-6.col-md-3.col-lg-3.col-xl-2.col-12
+            .form-group.form-focus.select-focus
+              label.focus-label Leave Status
+              select.select.floating
+                option  -- Select -- 
+                option  Pending 
+                option  Approved 
+                option  Rejected 
+          .col-sm-6.col-md-3.col-lg-3.col-xl-2.col-12
+            .form-group.form-focus
+              label.focus-label From
+              .cal-icon
+                input.form-control.floating.datetimepicker(type='text')
+          .col-sm-6.col-md-3.col-lg-3.col-xl-2.col-12
+            .form-group.form-focus
+              label.focus-label To
+              .cal-icon
+                input.form-control.floating.datetimepicker(type='text')
+          .col-sm-6.col-md-3.col-lg-3.col-xl-2.col-12
+            a.btn.btn-success.btn-block(href='#')  Search 
+        .row
+          .col-md-12
+            .table-responsive
+              table.table.table-striped.custom-table.datatable
+                thead
+                  tr
+                    th(style='width:25%;') Employee
+                    th Employee ID
+                    th Email
+                    th Joining Date
+                    th Role
+                    th Salary
+                    th Payslip
+                    th.text-right Action
+                tbody
+                  tr
+                    td
+                      img.rounded-circle(src='/assets/img/user-04.jpg' height='28' width='28' alt='')
+                      |  John Doe
+                    td FT-0001
+                    td johndoe@example.com
+                    td 1 Jan 2013
+                    td
+                      .dropdown
+                        a.custom-badge.status-grey.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false') Nurse
+                        .dropdown-menu
+                          a.dropdown-item(href='#') Laboratorist
+                          a.dropdown-item(href='#') Pharmacist
+                          a.dropdown-item(href='#') Accountant
+                          a.dropdown-item(href='#') Receptionist
+                    td $59698
+                    td
+                      a.btn.btn-sm.btn-primary(href='salary-view.html') Generate Slip
+                    td.text-right
+                      .dropdown.dropdown-action
+                        a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                          i.fa.fa-ellipsis-v
+                        .dropdown-menu.dropdown-menu-right
+                          a.dropdown-item(href='edit-salary.html')
+                            i.fa.fa-pencil.m-r-5
+                            |  Edit
+                          a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_salary')
+                            i.fa.fa-trash-o.m-r-5
+                            |  Delete
+      #delete_salary.modal.fade.delete-modal(role='dialog')
+        .modal-dialog.modal-dialog-centered
+          .modal-content
+            .modal-body.text-center
+              img(src='assets/img/sent.png' alt='' width='50' height='46')
+              h3 Are you sure want to delete this Salary?
+              .m-t-20
+                a.btn.btn-white(href='#' data-dismiss='modal') Close
+                button.btn.btn-danger(type='submit') Delete
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.dataTables.min.js')
+  script(src='assets/js/dataTables.bootstrap4.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/moment.min.js')
+  script(src='assets/js/bootstrap-datetimepicker.min.js')
+  script(src='assets/js/app.js')

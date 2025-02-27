@@ -1,0 +1,228 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    #sidebar.sidebar
+      .sidebar-inner.slimscroll
+        .sidebar-menu
+          ul
+            li
+              a(href='/admin/dashboard')
+                i.fa.fa-home.back-icon
+                span Back to Home
+            li.menu-title Settings
+            li.active
+              a(href='settings.html')
+                i.fa.fa-building
+                span Hopital Settings
+            li
+              a(href=`/${prefixAdmin}/setting/themeSetting`)
+                i.fa.fa-picture-o
+                span Theme Settings
+            li
+              a(href=`/${prefixAdmin}/setting/salarySetting`)
+                i.fa.fa-money
+                span Salary Settings
+            li
+              a(href=`/${prefixAdmin}/setting/changePassword`)
+                i.fa.fa-lock
+                span Change Password
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            form
+              h3.page-title Hopital Settings
+              .row
+                .col-sm-6
+                  .form-group
+                    label
+                      | Hopital Name 
+                      span.text-danger *
+                    input.form-control(type='text' value='Skinalyze')
+                .col-sm-6
+                  .form-group
+                    label Contact Person
+                    input.form-control(value='Vũ Xuân An' type='text')
+              .row
+                .col-sm-12
+                  .form-group
+                    label Address
+                    input.form-control(value='236, Hoàng Quốc Việt' type='text')
+                .col-sm-6.col-md-6.col-lg-3
+                  .form-group
+                    label Country
+                    select.form-control.select
+                      option Việt Nam
+                      option United Kingdom
+                .col-sm-6.col-md-6.col-lg-3
+                  .form-group
+                    label City
+                    input.form-control(value='Hà Nội' type='text')
+               
+                .col-sm-6
+                  .form-group
+                    label Email
+                    input.form-control(value='skinalyze@example.com' type='email')
+                .col-sm-6
+                  .form-group
+                    label Phone Number
+                    input.form-control(value='818-978-7102' type='text')
+                .col-sm-6
+                  .form-group
+                    label Fax
+                    input.form-control(value='818-978-7102' type='text')
+              .row
+                .col-sm-12
+                  .form-group
+                    label Website Url
+                    input.form-control(value='https://www.skinalyze.com' type='text')
+              .row
+                .col-sm-12.text-center.m-t-20
+                  button.btn.btn-primary.submit-btn(type='button') Save
+      .notification-box
+        .msg-sidebar.notifications.msg-noti
+          .topnav-dropdown-header
+            span Messages
+          #msg_list.drop-scroll.msg-list-scroll
+            ul.list-box
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar R
+                    .list-body
+                      span.message-author Richard Miles 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item.new-message
+                    .list-left
+                      span.avatar J
+                    .list-body
+                      span.message-author John Doe
+                      span.message-time 1 Aug
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar T
+                    .list-body
+                      span.message-author  Tarah Shropshire 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar M
+                    .list-body
+                      span.message-author Mike Litorus
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar C
+                    .list-body
+                      span.message-author  Catherine Manseau 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar D
+                    .list-body
+                      span.message-author  Domenic Houston 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar B
+                    .list-body
+                      span.message-author  Buster Wigton 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar R
+                    .list-body
+                      span.message-author  Rolland Webber 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar C
+                    .list-body
+                      span.message-author  Claire Mapes 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar M
+                    .list-body
+                      span.message-author Melita Faucher
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar J
+                    .list-body
+                      span.message-author Jeffery Lalor
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar L
+                    .list-body
+                      span.message-author Loren Gatlin
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar T
+                    .list-body
+                      span.message-author Tarah Shropshire
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+          .topnav-dropdown-footer
+            a(href='chat.html') See all messages
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/app.js')
+  // settings23:11

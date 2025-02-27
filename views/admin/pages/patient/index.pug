@@ -1,0 +1,50 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-sm-4.col-3
+            h4.page-title Patients
+        .row
+          .col-md-12
+            .table-responsive
+              table.table.table-border.table-striped.custom-table.datatable.mb-0
+                thead
+                  tr
+                    th Name
+                    th Age
+                    th Address
+                    th Phone
+                    th Email
+                    th.text-right Action
+                tbody
+                  each patient in patients
+                    tr
+                      td
+                        img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                        |  #{patient.fullName}
+                      td #{new Date().getFullYear() - new Date(patient.dob).getFullYear()} 
+                      td #{patient.address}
+                      td #{patient.phone}
+                      td #{patient.email}
+                      td.text-right
+                        a.btn.btn-sm.btn-primary.m-r-5(href=`/admin/patient/edit/${patient._id}`)
+                          i.fa.fa-pencil.m-r-5
+                          | Edit
+                        button.btn.btn-sm.btn-danger(data-toggle='modal' data-target='#delete_patient' data-id=`#{patient._id}`)
+                          i.fa.fa-trash-o.m-r-5
+                          | Delete
+
+                
+    #delete_patient.modal.fade.delete-modal(role='dialog')
+      .modal-dialog.modal-dialog-centered
+        .modal-content
+          .modal-body.text-center
+            img(src='/assets/img/sent.png' alt='' width='50' height='46')
+            h3 Are you sure want to delete this Patient?
+            .m-t-20
+              a.btn.btn-white(href='#' data-dismiss='modal') Close
+              button.btn.btn-danger(type='submit') Delete
+  .sidebar-overlay(data-reff='')
+

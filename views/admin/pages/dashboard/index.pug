@@ -1,0 +1,213 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-md-6.col-sm-6.col-lg-6.col-xl-3
+            .dash-widget
+              span.dash-widget-bg1
+                i.fa.fa-stethoscope(aria-hidden='true')
+              .dash-widget-info.text-right
+                h3=doctorCount
+                span.widget-title1
+                  | Doctors 
+                  i.fa.fa-check(aria-hidden='true')
+          .col-md-6.col-sm-6.col-lg-6.col-xl-3
+            .dash-widget
+              span.dash-widget-bg2
+                i.fa.fa-user-o
+              .dash-widget-info.text-right
+                h3=patientCount
+                span.widget-title2
+                  | Patients 
+                  i.fa.fa-check(aria-hidden='true')
+          .col-md-6.col-sm-6.col-lg-6.col-xl-3
+            .dash-widget
+              span.dash-widget-bg3
+                i.fa.fa-user-md(aria-hidden='true')
+              .dash-widget-info.text-right
+                h3 72
+                span.widget-title3
+                  | Attend 
+                  i.fa.fa-check(aria-hidden='true')
+          .col-md-6.col-sm-6.col-lg-6.col-xl-3
+            .dash-widget
+              span.dash-widget-bg4
+                i.fa.fa-heartbeat(aria-hidden='true')
+              .dash-widget-info.text-right
+                h3=appointmentCount
+                span.widget-title4
+                  | Pending 
+                  i.fa.fa-check(aria-hidden='true')
+        .row
+          .col-12.col-md-6.col-lg-6.col-xl-6
+            .card
+              .card-body
+                .chart-title
+                  h4 Patient Total
+                  span.float-right
+                    i.fa.fa-caret-up(aria-hidden='true')
+                    |  15% Higher than Last Month
+                canvas#linegraph
+          .col-12.col-md-6.col-lg-6.col-xl-6
+            .card
+              .card-body
+                .chart-title
+                  h4 Patients In
+                  .float-right
+                    ul.chat-user-total
+                      li
+                        i.fa.fa-circle.current-users(aria-hidden='true')
+                        | ICU
+                      li
+                        i.fa.fa-circle.old-users(aria-hidden='true')
+                        |  OPD
+                canvas#bargraph
+        .row
+          .col-12.col-md-6.col-lg-8.col-xl-8
+            .card
+              .card-header
+                h4.card-title.d-inline-block Upcoming Appointments
+                a.btn.btn-primary.float-right(href='appointments.html') View all
+              .card-body.p-0
+                .table-responsive
+                  table.table.mb-0
+                    thead.d-none
+                      tr
+                        th Patient Name
+                        th Doctor Name
+                        th Timing
+                        th.text-right Status
+                    tbody
+                      tr
+                        td(style='min-width: 200px;')
+                          a.avatar(href='/assets/img/user-02.jpg') 
+                            img(alt='' src='/assets/img/user-03.jpg')
+                          h2
+                            a(href='profile.html')
+                              | Đặng Hồng Thái 
+                              span Lũng Cú, Cà Mau
+                        td
+                          h5.time-title.p-0 Appointment With
+                          p Dr. Ngô Lan Hương
+                        td
+                          h5.time-title.p-0 Timing
+                          p 7.00 PM
+                        td.text-right
+                          a.btn.btn-outline-primary.take-btn(href='appointments.html') Take up
+                      tr
+                        td(style='min-width: 200px;')
+                          a.avatar(href='/assets/img/user-02.jpg') 
+                            img(alt='' src='/assets/img/user-05.jpg')
+                          h2
+                            a(href='profile.html')
+                              | Trịnh Trần Phương Tuấn 
+                              span Bến Tre
+                        td
+                          h5.time-title.p-0 Appointment With
+                          p Dr. Đào Viết Đoàn
+                        td
+                          h5.time-title.p-0 Timing
+                          p 7.00 PM
+                        td.text-right
+                          a.btn.btn-outline-primary.take-btn(href='appointments.html') Take up
+                      tr
+                        td(style='min-width: 200px;')
+                          a.avatar(href='/assets/img/user-02.jpg') 
+                            img(alt='' src='/assets/img/user-06.jpg')
+                          h2
+                            a(href='profile.html')
+                              | Trương Thị Lan Anh 
+                              span Cẩm Thủy, Thanh Hóa
+                        td
+                          h5.time-title.p-0 Appointment With
+                          p Dr. Mono
+                        td
+                          h5.time-title.p-0 Timing
+                          p 7.00 PM
+                        td.text-right
+                          a.btn.btn-outline-primary.take-btn(href='appointments.html') Take up
+                      
+          .col-12.col-md-6.col-lg-4.col-xl-4
+            .card.member-panel
+              .card-header.bg-white
+                h4.card-title.mb-0 Doctors
+              .card-body
+                ul.contact-list
+                  each doctor, index in doctors
+                    if index < 4
+                    li
+                      .contact-cont
+                        .float-left.user-img.m-r-10
+                          a(href='profile.html' title='John Doe')
+                            img.w-40.rounded-circle(src='/assets/img/user.jpg' alt='')
+                            span.status.online
+                        .contact-info
+                          span.contact-name.text-ellipsis= doctor.fullName
+                          span.contact-date= doctor.qualification
+
+                  
+              .card-footer.text-center.bg-white
+                a.text-muted(href='/admin/doctor') View all Doctors
+        .row
+          .col-12.col-md-6.col-lg-8.col-xl-8
+            .card
+              .card-header
+                h4.card-title.d-inline-block New Patients 
+                a.btn.btn-primary.float-right(href='/admin/patient') View all
+              .card-block
+                .table-responsive
+                  table.table.mb-0.new-patient-table
+                    tbody
+                      each patient in patients
+                        tr
+                          td
+                            img.rounded-circle(width='28' height='28' src=patient.avatar )
+                            h2= patient.fullName
+                          td= patient.email
+                          td= patient.phone
+                          td
+                            button.btn.btn-primary.btn-primary-one.float-right= patient.status
+                      
+          .col-12.col-md-6.col-lg-4.col-xl-4
+            .hospital-barchart
+              h4.card-title.d-inline-block Hospital Management
+            .bar-chart
+              .legend
+                .item
+                  h4 Level1
+                .item
+                  h4 Level2
+                .item.text-right
+                  h4 Level3
+                .item.text-right
+                  h4 Level4
+              .chart.clearfix
+                .item
+                  .bar
+                    span.percent 16%
+                    .item-progress(data-percent='16')
+                      span.title OPD Patient
+                .item
+                  .bar
+                    span.percent 71%
+                    .item-progress(data-percent='71')
+                      span.title New Patient
+                .item
+                  .bar
+                    span.percent 82%
+                    .item-progress(data-percent='82')
+                      span.title Laboratory Test
+                .item
+                  .bar
+                    span.percent 67%
+                    .item-progress(data-percent='67')
+                      span.title Treatment
+                .item
+                  .bar
+                    span.percent 30%
+                    .item-progress(data-percent='30')
+                      span.title Discharge
+  .sidebar-overlay(data-reff='')

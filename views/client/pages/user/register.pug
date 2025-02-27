@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Login Page
+    link(rel='stylesheet' type='text/css' href='/assets/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/font-awesome.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/select2.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/style.css')
+  body
+    block main
+      .main-wrapper.account-wrapper
+        .account-page
+          .account-center
+            .account-box
+              form.form-signin(action="/user/register" method="POST")
+                .account-logo
+                  a(href='index-2.html')
+                    img(src='assets/img/logo-dark.png' alt='')
+                .form-group
+                  label FullName
+                  input.form-control(type='text', name='fullName', required)
+                .form-group
+                  label Email Address
+                  input.form-control(type='email', name='email', required)
+                .form-group
+                  label Password
+                  input.form-control(type='password', name='password', required)
+                .form-group
+                  label Address 
+                  input.form-control(type='text', name='address', required)
+                .form-group
+                  label Mobile Number
+                  input.form-control(type='text', name='phone', required)
+                .row
+                  .col-md-6
+                    .form-group
+                      label Date of Birth
+                      input.form-control(type='date', name='dob', required)
+                  .col-md-6
+                    .form-group
+                      label Gender
+                      .d-flex.align-items-center
+                        .form-check.mr-3
+                          input.form-check-input(type='radio', name='gender', value='male' required)
+                          label.form-check-label(for='gender') Male
+                        .form-check
+                          input.form-check-input(type='radio', name='gender', value='female' required)
+                          label.form-check-label(for='gender') Female
+
+                .form-group.checkbox
+                  label
+                    input(type='checkbox')
+                    |  I have read and agree the Terms &amp; Conditions
+                .form-group.text-center
+                  button.btn.btn-primary.account-btn(type='submit') Signup
+                .text-center.login-link
+                  | Already have an account? 
+                  a(href="/user/login") Login
+    script(src='/assets/js/jquery-3.2.1.min.js')
+    script(src='/assets/js/popper.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/app.js')

@@ -1,0 +1,236 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            h4.page-title Add Blog
+        .row
+          .col-lg-8.offset-lg-2
+            form
+              .form-group
+                label Blog Name
+                input.form-control(type='text')
+              .form-group
+                label Blog Images
+                div
+                  input.form-control(type='file')
+                  small.form-text.text-muted Max. file size: 50 MB. Allowed images: jpg, gif, png. Maximum 10 images only.
+                .row
+                  .col-md-3.col-sm-3.col-4.col-lg-3.col-xl-2
+                    .product-thumbnail
+                      img.img-thumbnail.img-fluid(src='assets/img/blog/blog-thumb-01.jpg' alt='')
+                      span.product-remove(title='remove')
+                        i.fa.fa-close
+                  .col-md-3.col-sm-3.col-4.col-lg-3.col-xl-2
+                    .product-thumbnail
+                      img.img-thumbnail.img-fluid(src='assets/img/placeholder-thumb.jpg' alt='')
+                      span.product-remove(title='remove')
+                        i.fa.fa-close
+                  .col-md-3.col-sm-3.col-4.col-lg-3.col-xl-2
+                    .product-thumbnail
+                      img.img-thumbnail.img-fluid(src='assets/img/placeholder-thumb.jpg' alt='')
+                      span.product-remove(title='remove')
+                        i.fa.fa-close
+                  .col-md-3.col-sm-3.col-4.col-lg-3.col-xl-2
+                    .product-thumbnail
+                      img.img-thumbnail.img-fluid(src='assets/img/placeholder-thumb.jpg' alt='')
+                      span.product-remove(title='remove')
+                        i.fa.fa-close
+                  .col-md-3.col-sm-3.col-4.col-lg-3.col-xl-2
+                    .product-thumbnail
+                      img.img-thumbnail.img-fluid(src='assets/img/placeholder-thumb.jpg' alt='')
+                      span.product-remove(title='remove')
+                        i.fa.fa-close
+                  .col-md-3.col-sm-3.col-4.col-lg-3.col-xl-2
+                    .product-thumbnail
+                      img.img-thumbnail.img-fluid(src='assets/img/placeholder-thumb.jpg' alt='')
+                      span.product-remove(title='remove')
+                        i.fa.fa-close
+              .row
+                .col-md-6
+                  .form-group
+                    label Blog Category
+                    select.select
+                      option Health Care
+                      option Child
+                      option AHealth Care
+                .col-md-6
+                  .form-group
+                    label Blog Sub Category
+                    select.select
+                      option Health Care
+                      option Health Care
+                      option Health Care
+                      option Health Care
+                      option Health Care
+                      option Health Care
+                      option Health Care
+              .form-group
+                label Blog Description
+                textarea.form-control(cols='30' rows='6')
+              .form-group
+                label
+                  | Tags 
+                  small (separated with a comma)
+                input.form-control(type='text' placeholder='Enter your tags' data-role='tagsinput')
+              .form-group
+                label.display-block Blog Status
+                .form-check.form-check-inline
+                  input#blog_active.form-check-input(type='radio' name='status' value='option1' checked='')
+                  label.form-check-label(for='blog_active')
+                    | Active
+                .form-check.form-check-inline
+                  input#blog_inactive.form-check-input(type='radio' name='status' value='option2')
+                  label.form-check-label(for='blog_inactive')
+                    | Inactive
+              .m-t-20.text-center
+                button.btn.btn-primary.submit-btn Publish Blog
+      .notification-box
+        .msg-sidebar.notifications.msg-noti
+          .topnav-dropdown-header
+            span Messages
+          #msg_list.drop-scroll.msg-list-scroll
+            ul.list-box
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar R
+                    .list-body
+                      span.message-author Richard Miles 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item.new-message
+                    .list-left
+                      span.avatar J
+                    .list-body
+                      span.message-author John Doe
+                      span.message-time 1 Aug
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar T
+                    .list-body
+                      span.message-author  Tarah Shropshire 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar M
+                    .list-body
+                      span.message-author Mike Litorus
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar C
+                    .list-body
+                      span.message-author  Catherine Manseau 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar D
+                    .list-body
+                      span.message-author  Domenic Houston 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar B
+                    .list-body
+                      span.message-author  Buster Wigton 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar R
+                    .list-body
+                      span.message-author  Rolland Webber 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar C
+                    .list-body
+                      span.message-author  Claire Mapes 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar M
+                    .list-body
+                      span.message-author Melita Faucher
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar J
+                    .list-body
+                      span.message-author Jeffery Lalor
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar L
+                    .list-body
+                      span.message-author Loren Gatlin
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar T
+                    .list-body
+                      span.message-author Tarah Shropshire
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+          .topnav-dropdown-footer
+            a(href='chat.html') See all messages
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/tagsinput.js')
+  script(src='assets/js/app.js')
+  // add-blog23:57

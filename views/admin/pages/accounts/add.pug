@@ -1,0 +1,107 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            h4.page-title Add Doctor
+        .row
+          .col-lg-8.offset-lg-2
+            form(
+              action=`/${prefixAdmin}/accounts/add`
+              method= "POST"
+              enctype="multipart/form-data"
+              )
+              .row
+                .col-sm-6
+                  .form-group
+                    label
+                      | Full Name 
+                      span.text-danger *
+                    input.form-control(
+                      type='text'
+                      id="fullName"
+                      name = "fullName"
+                      required 
+                      )
+                .col-sm-6
+                  .form-group
+                    label
+                      | Email 
+                      span.text-danger *
+                    input.form-control(type='email' id = "email" name ="email")
+                .col-sm-6
+                  .form-group
+                    label Password
+                    input.form-control(type='password' id = "ps" name= "ps")
+                .col-sm-6
+                  .form-group
+                    label Confirm Password
+                    input.form-control(type='password' id ="comfirm" name = "comfirm")
+                
+                .col-sm-6.col-md-6.col-lg-3
+                  .form-group
+                    label Date of Birth
+                    .cal-icon
+                      input.form-control.datetimepicker(type='text' id ="date" name="birthday")
+                .col-sm-6.col-md-6.col-lg-3
+                  .form-group
+                    label Role
+                    select.form-control(name="role")
+                      each role in roles
+                        option(value=role._id) #{role.title}
+                .col-sm-6.col-md-6.col-lg-3
+                  .form-group.gender-select
+                    label.gen-label Gender:
+                    .form-check-inline
+                      label.form-check-label
+                        input.form-check-input(type='radio' name='gender' value='male' required)
+                        | Male
+                    .form-check-inline
+                      label.form-check-label
+                        input.form-check-input(type='radio' name='gender' value='female' required)
+                        | Female
+                .col-sm-6.col-md-6.col-lg-3
+                  .form-group
+                    label.display-block Status
+                    .form-check.form-check-inline
+                      input#doctor_active.form-check-input(type='radio' name='status' value='option1' checked)
+                      label.form-check-label(for='doctor_active')
+                        | Active
+                    .form-check.form-check-inline
+                      input#doctor_inactive.form-check-input(type='radio' name='status' value='option2')
+                      label.form-check-label(for='doctor_inactive')
+                        | Inactive
+                .col-sm-6
+                  .row
+                    .col-sm-12
+                      .form-group
+                        label(for="address") Address
+                        input.form-control(type='text' id=" address" name= "address")
+                .col-sm-6
+                  .form-group
+                    label(for="phone")  Phone 
+                    input.form-control(type='text' id= "phone" name ="phone")
+                .col-sm-6
+                  .form-group
+                    label(for="thumbnail")  Avatar
+                    .profile-upload
+                      .upload-img
+                        img(alt='' src='assets/img/user.jpg')
+                      .upload-input
+                        input.form-control-file(type='file' id="thumbnail" name= "thumbnail" accept="image/* upload-image-input" )
+                
+                    
+              .form-group.m-t-20.text-center
+                button.btn.btn-primary.submit-btn(type="submit") Create Account
+  .sidebar-overlay(data-reff='')
+  script(src='/assets/js/jquery-3.2.1.min.js')
+  script(src='/assets/js/popper.min.js')
+  script(src='/assets/js/bootstrap.min.js')
+  script(src='/assets/js/jquery.slimscroll.js')
+  script(src='/assets/js/select2.min.js')
+  script(src='/assets/js/moment.min.js')
+  script(src='/assets/js/bootstrap-datetimepicker.min.js')
+  script(src='/assets/js/app.js')
+  // add-doctor24:06

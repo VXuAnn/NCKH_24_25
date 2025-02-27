@@ -1,0 +1,46 @@
+header#header
+  nav.header-top.pt-4.pb-5
+    .container
+      .row.justify-content-between.align-items-center
+        .col-lg-5.col-md-4.col-sm-6
+          a.navbar-brand(href='index.html')
+            img.logo(src='images/main-logo.png')
+        .col-lg-4.col-md-4.d-md-block.d-sm-none
+          ul.contact-list.d-flex.justify-content-lg-end.flex-wrap.list-unstyled.m-0
+            li.pe-5.pe-lg-0.pe-xxl-5.pb-3.pb-lg-0
+              svg.location.primary-color(width='24' height='24')
+                use(xlink:href='#location')
+              |236 Hoang Quoc Viet, Ha Noi
+            li.ps-xl-3
+              svg.phone.primary-color(width='24' height='24')
+                use(xlink:href='#phone')
+              | 099628822
+        .col-lg-3.col-md-4.col-sm-6
+          .btn-book.text-end
+            a.btn.btn-medium.btn-outline-primary.btn-pill.text-uppercase(href='#book-appointment') Book Now
+  nav#primary-header.navbar.navbar-expand-lg.shadow-none(nav='' aria-label='navbar' height='30')
+    .container
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbar-primary' aria-controls='navbar-primary' aria-expanded='false' aria-label='Toggle navigation')
+        svg.navbar-icon.mt-3.primary-color-500.bg-light(width='50' height='50')
+          use(xlink:href='#navbar-icon')
+      #navbar-primary.header-bottom.collapse.navbar-collapse.bg-light.border-radius-10.py-2
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item.ps-4.pe-4.border-right
+            a.nav-link.text-dark.active.p-0.mt-3.mt-lg-0(aria-current='page' href='#intro') Home
+          //- li.nav-item.ps-4.pe-4.border-right
+          //-   a.nav-link.text-dark.p-0(href='#about-us') About
+          li.nav-item.ps-4.pe-4.border-right
+            a.nav-link.text-dark.p-0(href='#our-services') Services
+          li.nav-item.ps-4.pe-4.border-right
+            a.nav-link.text-dark.p-0(href='#book-appointment') Booking
+          li.nav-item.ps-4.pe-4.border-right
+            a.nav-link.text-dark.p-0(href='#our-team') Team
+          li.nav-item.ps-4.pe-4.border-right
+          if user
+            a.nav-link.text-dark.p-0(href="/user/logout") Logout
+          else
+            a.nav-link.text-dark.p-0(href="/user/login") Login
+        //- form.search-form.mb-3.mb-lg-0(role='search')
+        //-   svg.search.primary-color.position-absolute(width='18' height='18')
+        //-     use(xlink:href='#search')
+        //-   input.form-control.border-0.ps-4.position-relative(type='search' placeholder='Search..' aria-label='Search')

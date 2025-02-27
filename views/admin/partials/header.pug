@@ -1,0 +1,37 @@
+.header
+    .header-left
+      a.logo()
+        img(src='/assets/img/logo.png' width='35' height='35' alt='')
+        span Skinalyze
+    a#toggle_btn(href='javascript:void(0);')
+      i.fa.fa-bars
+    a#mobile_btn.mobile_btn.float-left(href='#sidebar')
+      i.fa.fa-bars
+    ul.nav.user-menu.float-right
+      li.nav-item.dropdown.has-arrow
+        a.dropdown-toggle.nav-link.user-link(href='#' data-toggle='dropdown')
+          span.user-img
+            img.rounded-circle(src='/assets/img/user.jpg' width='24' alt='Admin')
+            span.status.online
+          span Admin
+        .dropdown-menu
+          a.dropdown-item(href='profile.html') My Profile
+          a.dropdown-item(href='edit-profile.html') Edit Profile
+          a.dropdown-item(href='settings.html') Settings
+          a.dropdown-item(href=`/${prefixAdmin}/logout`) Logout
+    .dropdown.mobile-user-menu.float-right
+      a.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+        i.fa.fa-ellipsis-v
+      .dropdown-menu.dropdown-menu-right
+        a.dropdown-item(href='profile.html') My Profile
+        a.dropdown-item(href='edit-profile.html') Edit Profile
+        a.dropdown-item(href='settings.html') Settings
+
+    script(src='/assets/js/jquery-3.2.1.min.js')
+    script(src='/assets/js/popper.min.js')  
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/jquery.slimscroll.js')
+    script(src='/assets/js/select2.min.js')
+    script(src='/assets/js/moment.min.js')
+    script(src='/assets/js/bootstrap-datetimepicker.min.js')
+    script(src='/assets/js/app.js')

@@ -1,0 +1,37 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-sm-4.col-3
+            h4.page-title Doctors
+          .col-sm-8.col-9.text-right.m-b-20
+            a.btn.btn-primary.btn-rounded.float-right(href=`/${prefixAdmin}/doctor/add`)
+              i.fa.fa-plus
+              |  Add Doctor
+          .row.doctor-grid
+          each item in doctors 
+            .col-md-4.col-sm-4.col-lg-3
+              .profile-widget
+                .doctor-img
+                  a.avatar(href=`/${prefixAdmin}/doctor/profile/${item.id}`)
+                    - const randomImage = Math.floor(Math.random() * 4) + 1;
+                    img(alt='' src=`/assets/img/doctor-thumb-0${randomImage}.jpg`)
+                h4.doctor-name.text-ellipsis
+                  a(href=`/${prefixAdmin}/doctor/profile`) #{item.name}
+                .doc-prof #{item.qualification}
+                .user-country
+                  i.fa.fa-map-marker
+                  |  #{item.address}
+
+    .sidebar-overlay(data-reff='')
+
+    script(src='/assets/js/jquery-3.2.1.min.js')
+    script(src='/assets/js/popper.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/jquery.slimscroll.js')
+    script(src='/assets/js/select2.min.js')
+    script(src='/assets/js/moment.min.js')
+    script(src='/assets/js/bootstrap-datetimepicker.min.js')
+    script(src='/assets/js/app.js')

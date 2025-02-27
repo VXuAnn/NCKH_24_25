@@ -1,0 +1,37 @@
+extends ../../layouts/default.pug
+
+block main
+  .page-wrapper
+    .content
+      .row
+        .col-lg-8.offset-lg-2
+          form
+            h4.page-title Theme Settings
+            .form-group.row
+              label.col-lg-3.col-form-label Website Name
+              .col-lg-9
+                input.form-control(name='website_name' value='PreClinic' type='text')
+            .form-group.row
+              label.col-lg-3.col-form-label Light Logo
+              .col-lg-7
+                input.form-control(type='file')
+                span.form-text.text-muted Recommended image size is 40px x 40px
+              .col-lg-2
+                .img-thumbnail.float-right
+                  img(src='assets/img/logo-dark.png' alt='' width='40' height='40')
+            .form-group.row
+              label.col-lg-3.col-form-label Favicon
+              .col-lg-7
+                input.form-control(type='file')
+                span.form-text.text-muted Recommended image size is 16px x 16px
+              .col-lg-2
+                .settings-image.img-thumbnail.float-right
+                  img.img-fluid(src='assets/img/favicon.ico' width='16' height='16' alt='')
+            .m-t-20.text-center
+              button.btn.btn-primary.submit-btn Save
+    .sidebar-overlay(data-reff='')
+    script(src='assets/js/jquery-3.2.1.min.js')
+    script(src='assets/js/popper.min.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery.slimscroll.js')
+    script(src='assets/js/app.js')  

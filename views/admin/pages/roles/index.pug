@@ -1,0 +1,142 @@
+extends ../../layouts/default.pug
+block main
+  .page-wrapper
+    .content
+      .row
+        .col-sm-8
+          h4.page-title Roles &amp; Permissions
+      .row
+        .col-sm-4.col-md-4.col-lg-4.col-xl-3
+          a.btn.btn-primary.btn-block(href='add-role.html')
+            i.fa.fa-plus
+            |  Add Roles
+          .roles-menu
+            ul
+              li.active
+                a(href='javascript:void(0);') Administrator
+                span.role-action
+                  a(href='edit-role.html')
+                    span.action-circle.large
+                      i.material-icons edit
+                  a(href='#' data-toggle='modal' data-target='#delete_role')
+                    span.action-circle.large.delete-btn
+                      i.material-icons delete
+              li
+                a(href='#') Doctor
+              li
+                a(href='#') Nurse
+              li
+                a(href='#') Laboratorist
+              li
+                a(href='#') Pharmacist
+              li
+                a(href='#') Accountant
+              li
+                a(href='#') Receptionist
+        .col-sm-8.col-md-8.col-lg-8.col-xl-9
+          h6.card-title.m-b-20 Module Access
+          .m-b-30
+            ul.list-group
+              li.list-group-item
+                | Employee
+                .material-switch.float-right
+                  input#staff_module(type='checkbox')
+                  label.badge-success(for='staff_module')
+              li.list-group-item
+                | Holidays
+                .material-switch.float-right
+                  input#holidays_module(type='checkbox')
+                  label.badge-success(for='holidays_module')
+              li.list-group-item
+                | Leave Request
+                .material-switch.float-right
+                  input#leave_module(type='checkbox')
+                  label.badge-success(for='leave_module')
+              li.list-group-item
+                | Events
+                .material-switch.float-right
+                  input#events_module(type='checkbox')
+                  label.badge-success(for='events_module')
+              li.list-group-item
+                | Chat
+                .material-switch.float-right
+                  input#chat_module(type='checkbox')
+                  label.badge-success(for='chat_module')
+          .table-responsive
+            table.table.table-striped.custom-table
+              thead
+                tr
+                  th Module Permission
+                  th.text-center Read
+                  th.text-center Write
+                  th.text-center Create
+                  th.text-center Delete
+                  th.text-center Import
+                  th.text-center Export
+              tbody
+                tr
+                  td Employee
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                tr
+                  td Holidays
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                tr
+                  td Leave Request
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                tr
+                  td Events
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+                  td.text-center
+                    input(type='checkbox' checked='')
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/moment.min.js')
+  script(src='assets/js/bootstrap-datetimepicker.min.js')
+  script(src='assets/js/app.js')
+  // schedule23:21

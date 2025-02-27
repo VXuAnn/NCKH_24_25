@@ -1,0 +1,479 @@
+extends ../layouts/default.pug
+block main
+  section#intro.position-relative.overflow-hidden
+    .banner
+      img.img-fluid(src='images/banner-image.jpg' alt='banner')
+      .container
+        .banner-content.position-absolute.padding-large
+          span.sub-heading.bg-light.py-2.px-4.mb-4.border-radius-30.text-uppercase.d-inline-block.text-cadet-blue.fw-medium
+            svg.heart.primary-color.me-2(width='20' height='20')
+              use(xlink:href='#heart')
+            | Live your life
+          h1.display-3.fw-bold.text-dark We Care About Your Skin
+          p.mt-3.mb-4
+            | Empowering your skin with personalized care and insight, for a healthier, radiant you.
+            | Good for you.
+          a.btn.btn-medium.btn-primary.btn-pill.text-uppercase(href='contact.html') Contact us
+  section#about-us.padding-large
+    //- .container
+    //-   .row
+    //-     .col-lg-3.col-md-6.col-sm-6
+    //-       .counter-info.text-center
+    //-         .counter-number.text-primary-500.display-2.fw-semibold.d-flex.align-items-center.justify-content-center
+    //-           span.counter-prefix +
+    //-           h5.timer.display-4.fw-bold.m-0(data-to='5120' data-speed='8000') 5120
+    //-         p.counter-description Happy Patients
+    //-     .col-lg-3.col-md-6.col-sm-6
+    //-       .counter-info.text-center
+    //-         .counter-number.text-primary-500.display-2.fw-semibold.d-flex.align-items-center.justify-content-center
+    //-           span.counter-prefix +
+    //-           h5.timer.display-4.fw-bold.m-0(data-to='5120' data-speed='8000') 26
+    //-         p.counter-description Total Branches
+    //-     .col-lg-3.col-md-6.col-sm-6
+    //-       .counter-info.text-center
+    //-         .counter-number.text-primary-500.display-2.fw-semibold.d-flex.align-items-center.justify-content-center
+    //-           span.counter-prefix +
+    //-           h5.timer.display-4.fw-bold.m-0(data-to='5120' data-speed='8000') 53
+    //-         p.counter-description Senior Doctors
+    //-     .col-lg-3.col-md-6.col-sm-6
+    //-       .counter-info.text-center
+    //-         .counter-number.text-primary-500.display-2.fw-semibold.d-flex.align-items-center.justify-content-center
+    //-           span.counter-prefix +
+    //-           h5.timer.display-4.fw-bold.m-0(data-to='5120' data-speed='8000') 10
+    //-         p.counter-description Years Experience
+  section#our-services(style='background-image: url(images/services-bg.jpg); background-repeat: no-repeat; background-position: center; background-position: top;')
+    .container
+      .row
+        .display-header.text-light.d-flex.flex-wrap.justify-content-between.padding-medium
+          .col-lg-5.col-md-6.col-sm-12
+            h2.text-light Our Best Services For Your Solution
+          .col-lg-6.col-md-6.col-sm-12
+            p.text-light
+             | AI-Powered Skincare: Diagnose, Treat, Glow!  
+        .col-lg-3.col-md-6.pb-3
+          .icon-box.p-4.bg-light.border-radius-10.text-center
+            .icon-box-icon
+              svg.home-thermometer.mt-3.primary-color-500(width='50' height='50')
+                use(xlink:href='#home-thermometer')
+            .icon-box-content
+              h3.card-title.py-2 Tư vấn và chẩn đoán da liễu
+              p Chụp ảnh vùng da cần kiểm tra, nhận kết quả phân tích AI và được tư vấn bởi chuyên gia da liễu.
+        .col-lg-3.col-md-6.pb-3
+          .icon-box.p-4.bg-light.border-radius-10.text-center
+            .icon-box-icon
+              svg.pregnant-woman.mt-3.primary-color-500(width='50' height='50')
+                use(xlink:href='#pregnant-woman')
+            .icon-box-content
+              h3.card-title.py-2 Hỗ trợ điều trị cá nhân hóa
+              p Nhận hướng dẫn chăm sóc da hàng ngày và các sản phẩm phù hợp với tình trạng da của bạn.
+        .col-lg-3.col-md-6.pb-3
+          .icon-box.p-4.bg-light.border-radius-10.text-center
+            .icon-box-icon
+              svg.nutrition.mt-3.primary-color-500(width='50' height='50')
+                use(xlink:href='#nutrition')
+            .icon-box-content
+              h3.card-title.py-2 Theo dõi tiến trình da
+              p Cập nhật hình ảnh da mỗi ngày, nhận đánh giá tiến trình và điều chỉnh chế độ chăm sóc khi cần.
+        .col-lg-3.col-md-6.pb-3
+          .icon-box.p-4.bg-light.border-radius-10.text-center
+            .icon-box-icon
+              svg.local-pharmacy.mt-3.primary-color-500(width='50' height='50')
+                use(xlink:href='#local-pharmacy')
+            .icon-box-content
+              h3.card-title.py-2  Kết nối với bác sĩ da liễu
+              p Trò chuyện với bác sĩ da liễu qua video hoặc tin nhắn để nhận tư vấn cá nhân hóa.
+  section#book-appointment.padding-large.mb-0
+    .container
+      .row
+        .display-header
+          h2.display-5.fw-bold.text-dark
+            | Book Appointment or call: 
+            span.text-primary-500
+              | (+096) 384
+              | 9452
+        form.contact-form.d-flex.flex-wrap.mt-5.gx-1(action="/addAppointment" method="POST")
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            select#department-select.form-select.focus-transparent.border.border-radius-10.ps-4(name='department')
+              option(value='') Select Department
+              each department in departments
+                option(value=department._id)= department.title
+
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            select#doctor-select.form-select.focus-transparent.border.ps-4.border-radius-10(name='doctor')
+              option(value='') Select Doctor
+              each doctor in doctors
+                option(value=doctor._id)= doctor.fullName
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            input.border.ps-4.border-radius-10(type='text' name='fullName' placeholder='Full Name')
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            input.border.ps-4.border-radius-10(type='text' name='phone' placeholder='Phone Number')
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            input.border.ps-4.border-radius-10(type='text' name='age' placeholder='Age')
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            #datepicker.input-group.date
+              input#start.bg-transparent.ps-4.border.border-radius-10.position-relative(type='date' name='appointmentDate' placeholder='Choose Date')
+          .col-lg-6.col-md-12.col-sm-12.mb-3
+            #timepicker.input-group.time
+              input#start.bg-transparent.ps-4.border.border-radius-10.position-relative(type='time' name='appointmentTime' min='9AM' max='6PM')
+            
+          button.btn.btn-medium.btn-primary.btn-pill.mt-3.text-uppercase(type='submit') Book an appointment
+  section#testimonial(style='background-image: url(images/review-bg.jpg); background-repeat: no-repeat; background-position: right; height: 595px;')
+    .container
+      .row.align-items-center.padding-medium
+        .col-lg-5.col-md-4
+          .image-holder
+            img.img-fluid(src='images/review-image.png' alt='review')
+        .col-lg-7.col-md-8
+          .review-content
+            .swiper.testimonial-swiper
+              .swiper-wrapper.position-relative
+                .swiper-slide
+                  .review-item
+                    svg.quote.quote-up.primary-color-500.position-absolute(width='80' height='70')
+                      use(xlink:href='#quote-up')
+                    blockquote.fs-4
+                      p
+                        | Tôi đã bị mụn trứng cá trong nhiều năm và đã thử nhiều phương pháp nhưng không hiệu quả. Nhờ liệu trình điều trị tại phòng khám, làn da của tôi đã cải thiện rõ rệt chỉ sau 3 tháng.
+                        |  tận tâm và hướng dẫn chi tiết. Cảm ơn rất nhiều!
+                      .author-detail
+                        .name.fs-3.fw-bold.text-dark Nguyễn Thị Lan, 22 tuổi
+                    svg.quote.quote-down.primary-color-500.position-absolute(width='80' height='70')
+                      use(xlink:href='#quote-down')
+                // swiper-slide
+                .swiper-slide
+                  .review-item
+                    svg.quote.quote-up.primary-color-500.position-absolute(width='80' height='70')
+                      use(xlink:href='#quote-up')
+                    blockquote.fs-4
+                      p
+                        | Tôi bị viêm da cơ địa từ nhỏ, mỗi lần thời tiết thay đổi là da lại khô, ngứa và nổi mẩn. Nhờ phác đồ điều trị và hướng dẫn chăm sóc da từ bác sĩ, tình trạng của
+                        | tôi đã ổn định hơn rất nhiều. Tôi không còn cảm giác khó chịu như trước nữa.
+                      .author-detail
+                        .name.fs-3.fw-bold.text-dark Trần Văn Minh, 30 tuổi
+                    svg.quote.quote-down.primary-color-500.position-absolute(width='80' height='70')
+                      use(xlink:href='#quote-down')
+                // swiper-slide
+                .swiper-slide
+                  .review-item
+                    svg.quote.quote-up.primary-color-500.position-absolute(width='80' height='70')
+                      use(xlink:href='#quote-up')
+                    blockquote.fs-4
+                      p
+                        | Sau khi sinh, tôi bị nám rất nhiều trên mặt, khiến tôi mất tự tin. Nhờ liệu trình laser kết hợp với thuốc bôi mà bác sĩ chỉ định, vết nám đã mờ đi  đáng kể sau 2 tháng
+                        | . Tôi rất hài lòng và sẽ tiếp tục điều trị để có làn da đẹp hơn
+                      .author-detail
+                        .name.fs-3.fw-bold.text-dark Phạm Thùy Dung, 35 tuổi
+                    svg.quote.quote-down.primary-color-500.position-absolute(width='80' height='70')
+                      use(xlink:href='#quote-down')
+                // swiper-slide
+              .swiper-pagination.text-left
+  section#our-team.padding-large
+    .container
+      .row
+        .display-header.mb-5
+          h2.display-5.fw-bold.text-dark Our Team
+        .team-content
+          .swiper.team-swiper
+            .swiper-wrapper.pb-5
+              .swiper-slide
+                .team-member.d-flex.align-items-center
+                  .col-md-6
+                    .image-holder.me-4.mb-4
+                      img.border-radius-10.img-fluid(src='images/team-item.jpg' alt='team member')
+                  .col-md-6
+                    .member-info
+                      h3.fs-4.fw-bold.text-dark Dr. Leslie Taylor
+                      span.text-uppercase.fs-6.text-cadet-blue.pb-2.d-block Pediatrician
+                      p
+                        | Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        | penatibus et.
+              .swiper-slide
+                .team-member.d-flex.align-items-center
+                  .col-md-6
+                    .image-holder.me-4.mb-4
+                      img.border-radius-10.img-fluid(src='images/team-item1.jpg' alt='team member')
+                  .col-md-6
+                    .member-info
+                      h3.fs-4.fw-bold.text-dark Dr. Zachary Brown
+                      span.text-uppercase.fs-6.text-cadet-blue.pb-2.d-block Cardiologist
+                      p
+                        | Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        | penatibus et.
+                      ul.social-links.list-unstyled.d-flex
+                        li
+                          a(href='#')
+                            svg.facebook.text-primary-500.me-4(width='30' height='30')
+                              use(xlink:href='#facebook')
+                        li
+                          a(href='#')
+                            svg.twitter.text-primary-500.me-4(width='30' height='30')
+                              use(xlink:href='#twitter')
+                        li
+                          a(href='#')
+                            svg.instagram.text-primary-500.me-4(width='30' height='30')
+                              use(xlink:href='#instagram')
+                        li
+                          a(href='#')
+                            svg.youtube.text-primary-500(width='30' height='30')
+                              use(xlink:href='#youtube')
+              .swiper-slide
+                .team-member.d-flex.align-items-center
+                  .col-md-6
+                    .image-holder.me-4.mb-4
+                      img.border-radius-10.img-fluid(src='images/team-item2.jpg' alt='team member')
+                  .col-md-6
+                    .member-info
+                      h3.fs-4.fw-bold.text-dark Dr. Isabella Davies
+                      span.text-uppercase.fs-6.text-cadet-blue.pb-2.d-block Gynecologist
+                      p
+                        | Dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum habitant fames ac
+                        | penatibus et.
+            .swiper-pagination
+        // team-content
+  section#faqs.padding-large
+    .container
+      .row
+        .display-header.mb-5
+          h2.display-5.fw-bold.text-center.text-dark We&rsquo;ve Got Answers
+        #accordion.accordion
+          .accordion-item.border-0.py-3
+            h2.accordion-header
+              button.accordion-button.fs-4.fw-bold.text-dark.bg-transparent.focus-transparent.text-capitalize.shadow-none(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                | Why to believe with Insove medical healthcare ?
+            #collapseOne.accordion-collapse.border-0.collapse.show(data-bs-parent='#accordion')
+              .accordion-body
+                p
+                  | Diam orci gravida convallis at enim risus viverra. Hac mi tristique in aliquet tincidunt nam lectus
+                  | nec. Placerat interdum auctor facilisi massa laoreet hendrerit posuere a. Tristique ultricies
+                  | consectetu at.
+          .accordion-item.border-0.py-3
+            h2.accordion-header
+              button.accordion-button.fs-4.fw-bold.text-dark.bg-transparent.collapsed.focus-transparent.text-capitalize.shadow-none(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+                | Will we get healthcare updates after surgery ?
+            #collapseTwo.accordion-collapse.collapse(data-bs-parent='#accordion')
+              .accordion-body
+                p
+                  | This is the second item&apos;s accordion body.It is hidden by default, until the collapse plugin adds the
+                  | appropriate classes that we use to style each element. These classes control the overall appearance,
+                  | as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                  | overriding our default variables.
+          .accordion-item.border-0.py-3
+            h2.accordion-header
+              button.accordion-button.fs-4.fw-bold.text-dark.bg-transparent.collapsed.focus-transparent.text-capitalize.shadow-none(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                | What is the cost for just check-up ?
+            #collapseThree.accordion-collapse.collapse(data-bs-parent='#accordion')
+              .accordion-body
+                p
+                  | This is the third item&apos;s accordion body.It is hidden by default, until the collapse plugin adds the
+                  | appropriate classes that we use to style each element. These classes control the overall appearance,
+                  | as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                  | overriding our default variables.
+          .accordion-item.border-0.py-3
+            h2.accordion-header
+              button.accordion-button.fs-4.fw-bold.text-dark.bg-transparent.collapsed.focus-transparent.text-capitalize.shadow-none(type='button' data-bs-toggle='collapse' data-bs-target='#collapseFour' aria-expanded='false' aria-controls='collapseFour')
+                | Can i cancel my appointment ?
+            #collapseFour.accordion-collapse.collapse(data-bs-parent='#accordion')
+              .accordion-body
+                p
+                  | This is the third item&apos;s accordion body.It is hidden by default, until the collapse plugin adds the
+                  | appropriate classes that we use to style each element. These classes control the overall appearance,
+                  | as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                  | overriding our default variables.
+  section#department.overflow-hidden
+    .container-md
+      .row
+        .medical-department-tab.bg-primary-200.d-flex.align-items-start.padding-large.ps-5.border-radius-20
+          #medical-tab.nav.nav-tabs.border-0.col-lg-3.col-md-3.ps-4(role='tablist' aria-orientation='vertical')
+            button#laboratory-tab.nav-link.text-uppercase.text-cadet-blue.border-0.bg-transparent.pb-4.active(data-bs-toggle='tab' data-bs-target='#laboratory' type='button' role='tab' aria-controls='laboratory' aria-selected='true') Laboratory Analysis
+            button#cardiology-tab.nav-link.text-uppercase.text-cadet-blue.border-0.bg-transparent.pb-4(data-bs-toggle='tab' data-bs-target='#cardiology' type='button' role='tab' aria-controls='cardiology' aria-selected='false') Cardiology Clinic
+            button#gynecology-tab.nav-link.text-uppercase.text-cadet-blue.border-0.bg-transparent.pb-4(data-bs-toggle='tab' data-bs-target='#gynecology' type='button' role='tab' aria-controls='gynecology' aria-selected='false') Gynecology Clinic
+            button#pathology-tab.nav-link.text-uppercase.text-cadet-blue.border-0.bg-transparent.pb-4(data-bs-toggle='tab' data-bs-target='#pathology' type='button' role='tab' aria-controls='pathology' aria-selected='false') Pathology Clinic
+            button#pediatrics-tab.nav-link.text-uppercase.text-cadet-blue.border-0.bg-transparent.pb-4(data-bs-toggle='tab' data-bs-target='#pediatrics' type='button' role='tab' aria-controls='pediatrics' aria-selected='false') Pediatrics Clinic
+            button#neurology-tab.nav-link.text-uppercase.text-cadet-blue.border-0.bg-transparent(data-bs-toggle='tab' data-bs-target='#neurology' type='button' role='tab' aria-controls='neurology' aria-selected='false') Neurology Clinic
+          #tabContent.tab-content.col-lg-8.col-md-8
+            #laboratory.tab-pane.fade.show.active.position-relative(role='tabpanel' aria-labelledby='laboratory-tab' tabindex='0')
+              h2.display-5.fw-bold.pb-3.text-dark Laboratory Analysis
+              p
+                | Laboratory analysis means a test performed by a labo- ratory on body fluid, tissue, or excretion for
+                | the purpose of determining the presence, absence, or concentration of various substances in the human
+                | body.
+              p
+                | Sampling is the process of collecting a portion of an environmental medium as representative of the
+                | locally remaining medium. The collected portion of the medium is then analyzed to determine the
+                | radionuclide concentration.
+              p
+                a.text-primary.pe-3(href='#') Neurocritical Care
+                a.text-primary.pe-3(href='#')
+                  | Neuro
+                  | Oncology
+                a.text-primary.pe-3(href='#') Geriatric Neurology
+              a.btn.btn-medium.btn-primary.btn-pill.mt-4(href='departments.html') Learn More
+            #cardiology.tab-pane.fade.position-relative(role='tabpanel' aria-labelledby='cardiology-tab' tabindex='0')
+              h2.display-5.fw-bold.pb-3.text-dark Cardiology Clinic
+              p
+                | Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                | egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                | tincidunt ut vitae elit risus.
+              p
+                | Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                | Vel non viverra ligula odio ornare turpis mauris.
+              p
+                a.text-primary.pe-3(href='#') Neurocritical Care
+                a.text-primary.pe-3(href='#')
+                  | Neuro
+                  | Oncology
+                a.text-primary.pe-3(href='#') Geriatric Neurology
+              a.btn.btn-medium.btn-primary.btn-pill.mt-4(href='departments.html') Learn More
+            #gynecology.tab-pane.fade.position-relative(role='tabpanel' aria-labelledby='gynecology-tab' tabindex='0')
+              h2.display-5.fw-bold.pb-3.text-dark Gynecology Clinic
+              p
+                | Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                | egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                | tincidunt ut vitae elit risus.
+              p
+                | Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                | Vel non viverra ligula odio ornare turpis mauris.
+              p
+                a.text-primary.pe-3(href='#') Neurocritical Care
+                a.text-primary.pe-3(href='#')
+                  | Neuro
+                  | Oncology
+                a.text-primary.pe-3(href='#') Geriatric Neurology
+              a.btn.btn-medium.btn-primary.btn-pill.mt-4(href='departments.html') Learn More
+            #pathology.tab-pane.fade.position-relative(role='tabpanel' aria-labelledby='pathology-tab' tabindex='0')
+              h2.display-5.fw-bold.pb-3.text-dark Pathology Clinic
+              p
+                | Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                | egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                | tincidunt ut vitae elit risus.
+              p
+                | Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                | Vel non viverra ligula odio ornare turpis mauris.
+              p
+                a.text-primary.pe-3(href='#') Neurocritical Care
+                a.text-primary.pe-3(href='#')
+                  | Neuro
+                  | Oncology
+                a.text-primary.pe-3(href='#') Geriatric Neurology
+              a.btn.btn-medium.btn-primary.btn-pill.mt-4(href='departments.html') Learn More
+            #pediatrics.tab-pane.fade.position-relative(role='tabpanel' aria-labelledby='pediatrics-tab' tabindex='0')
+              h2.display-5.fw-bold.pb-3.text-dark Pediatrics Clinic
+              p
+                | Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                | egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                | tincidunt ut vitae elit risus.
+              p
+                | Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                | Vel non viverra ligula odio ornare turpis mauris.
+              p
+                a.text-primary.pe-3(href='#') Neurocritical Care
+                a.text-primary.pe-3(href='#')
+                  | Neuro
+                  | Oncology
+                a.text-primary.pe-3(href='#') Geriatric Neurology
+              a.btn.btn-medium.btn-primary.btn-pill.mt-4(href='departments.html') Learn More
+            #neurology.tab-pane.fade.position-relative(role='tabpanel' aria-labelledby='neurology-tab' tabindex='0')
+              h2.display-5.fw-bold.pb-3.text-dark Neurology Clinic
+              p
+                | Vel non viverra ligula odio ornare turpis mauris. Odio aliquam, tincidunt ut vitae elit risus. Tempor
+                | egestas condimentum et ac rutrum dui, odio.Vel non viverra ligula odio ornare turpis mauris. Aliquam,
+                | tincidunt ut vitae elit risus.
+              p
+                | Tempor egestas condimentum et ac rutrum dui, odio. Non viverra ligula odio ornare turpis mauris. Dio a
+                | Vel non viverra ligula odio ornare turpis mauris.
+              p
+                a.text-primary.pe-3(href='#') Neurocritical Care
+                a.text-primary.pe-3(href='#')
+                  | Neuro
+                  | Oncology
+                a.text-primary.pe-3(href='#') Geriatric Neurology
+              a.btn.btn-medium.btn-primary.btn-pill.mt-4(href='departments.html') Learn More
+  section#latest-blog.padding-large
+    .container
+      .row
+        .display-header
+          h2.display-5.fw-bold.text-dark Our Recent Posts
+        .post-grid.d-flex.flex-wrap.mt-4
+          .col-lg-4.col-md-6.col-sm-12.mb-5
+            .card-item.pe-3
+              .card.border-0.bg-transparent
+                .card-image.position-relative
+                  img.post-image.img-fluid.border-radius-top-10(src='images/post-item1.jpg' alt='')
+                  span.bg-primary-dim.text-light.position-absolute.text-uppercase.text-capitalize Medical
+              .card-body.p-3.mt-2
+                .meta-date Jan 2, 2023
+                h3.card-title.fs-3.text-capitalize.fw-semibold.mt-3
+                  a(href='blog-single.html') 10 foods to avoid for your heart health
+                p
+                  | It&rsquo;s normal to feel anxiety, worry and grief any time you&rsquo;re diagnosed with a condition that&rsquo;s
+                  | certainly true... 
+                  a.text-decoration-underline(href='blog-single.html')
+                    em Read more
+          .col-lg-4.col-md-6.col-sm-12.mb-5
+            .card-item.pe-3
+              .card.border-0.bg-transparent
+                .card-image.position-relative
+                  img.post-image.img-fluid.border-radius-top-10(src='images/post-item2.jpg' alt='')
+                  span.bg-primary-dim.text-light.position-absolute.text-uppercase.text-capitalize
+                    | Mental
+                    | Health
+              .card-body.p-3.mt-2
+                .meta-date Jan 3, 2023
+                h3.card-title.fs-3.text-capitalize.fw-semibold.mt-3
+                  a(href='blog-single.html') How to be relax &amp; calm in hard situations
+                p
+                  | It&rsquo;s normal to feel anxiety, worry and grief any time you&rsquo;re diagnosed with a condition that&rsquo;s
+                  | certainly true... 
+                  a.text-decoration-underline(href='blog-single.html')
+                    em Read more
+          .col-lg-4.col-md-6.col-sm-12.mb-5
+            .card-item.pe-2
+              .card.border-0.bg-transparent
+                .card-image.position-relative
+                  img.post-image.img-fluid.border-radius-top-10(src='images/post-item3.jpg' alt='')
+                  span.bg-primary-dim.text-light.position-absolute.text-uppercase.text-capitalize
+                    | Dental
+                    | Health
+              .card-body.p-3.mt-2
+                .meta-date Jan 4, 2023
+                h3.card-title.fs-3.text-capitalize.fw-semibold.mt-3
+                  a(href='blog-single.html') Best ways to make your teeth strong
+                p
+                  | It&rsquo;s normal to feel anxiety, worry and grief any time you&rsquo;re diagnosed with a condition that&rsquo;s
+                  | certainly true... 
+                  a.text-decoration-underline(href='blog-single.html')
+                    em Read more
+      a.btn.btn-medium.btn-primary.btn-pill.text-uppercase.text-center.mx-auto(href='blog.html')
+        | Read more
+        | blogs
+  section#brand-collection.padding-large.pt-0.overflow-hidden
+    .container
+      .row.justify-content-between
+        .col.pb-3
+          img.top-image(src='images/betael.png' alt='brand')
+          img.bottom-image(src='images/betael1.png' alt='brand')
+        .col.pb-3
+          img.top-image(src='images/healer.png' alt='brand')
+          img.bottom-image(src='images/healer1.png' alt='brand')
+        .col.pb-3
+          img.top-image(src='images/lifetrace.png' alt='brand')
+          img.bottom-image(src='images/lifetrace1.png' alt='brand')
+        .col.pb-3
+          img.top-image(src='images/medcare.png' alt='brand')
+          img.bottom-image(src='images/medcare1.png' alt='brand')
+        .col
+          img.top-image(src='images/soven.png' alt='brand')
+          img.bottom-image(src='images/soven1.png' alt='brand')
+  section#subscribe.d-flex.align-items-center(style='background-image: url(images/subscribe-bg.jpg); background-repeat: no-repeat;background-size: cover; height: 444px;')
+    .container
+      .row.align-items-center
+        .subscribe-content
+          .row.align-items-center
+            .col-lg-6.col-md-12.col-sm-12
+              .subscribe-header.content-light.mb-5
+                span.text-light.text-uppercase Our newsletter
+                h3.display-3.fw-semibold.text-light.mt-3 Subscribe Us To Get More Updates
+            .col-lg-6.col-md-12.col-sm-12
+              form#form.d-flex.flex-wrap.position-relative
+                input.border-radius-35.text-light.ps-4.outline-transparent(type='text' name='email' placeholder='Your Email Addresss')
+                button.btn.btn-light.btn-subscribe.btn-pill.position-absolute.fw-medium.text-uppercase Subscribe

@@ -1,0 +1,24 @@
+extends ../../layouts/auth.pug
+
+block main 
+  .main-wrapper.account-wrapper
+    .account-page
+      .account-center
+        .account-box
+          form.form-signin(action='http://dreamguys.co.in/preclinic/template/index.html')
+            .account-logo
+              a(href='index-2.html')
+                img(src='/assets/img/logo-dark.png' alt='')
+            .form-group
+              label Username or Email
+              input.form-control(type='text' autofocus='')
+            .form-group
+              label Password
+              input.form-control(type='password')
+            .form-group.text-right
+              a(href='forgot-password.html') Forgot your password?
+            .form-group.text-center
+              button.btn.btn-primary.account-btn(type='submit') Login
+            .text-center.register-link
+              | Don&rsquo;t have an account? 
+              a(href='register.html') Register Now

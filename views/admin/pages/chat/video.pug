@@ -1,0 +1,434 @@
+extends ../../layouts/default.pug
+block main
+  .main-wrapper
+    
+    .page-wrapper
+      .chat-main-row
+        .chat-main-wrapper
+          .col-lg-9.message-view.chat-view
+            .chat-window
+              .fixed-header
+                .navbar
+                  .user-details.mr-auto
+                    .float-left.user-img.m-r-10
+                      a(href='profile.html' title='Mike Litorus')
+                        img.w-40.rounded-circle(src='/assets/img/user.jpg' alt='')
+                        span.status.online
+                    .user-info.float-left
+                      a(href='profile.html' title='Mike Litorus')
+                        span.font-bold Mike Litorus
+                      span.last-seen Online
+                  ul.nav.custom-menu
+                    li.nav-item
+                      a#task_chat.task-chat.profile-rightbar.float-right(href='#chat_sidebar')
+                        i.fa.fa-comments(aria-hidden='true')
+                    li.nav-item.dropdown.dropdown-action
+                      a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                        i.fa.fa-cog
+                      .dropdown-menu.dropdown-menu-right
+                        a.dropdown-item(href='javascript:void(0)') Settings
+              .chat-contents
+                .chat-content-wrap
+                  .user-video
+                    img(src='/assets/img/video-call.jpg' alt='')
+                  .my-video
+                    ul
+                      li
+                        img.img-fluid(src='/assets/img/user-02.jpg' alt='')
+              .chat-footer
+                .call-icons
+                  span.call-duration 00:59
+                  ul.call-items
+                    li.call-item
+                      a(href='#' title='Enable Video' data-placement='top' data-toggle='tooltip')
+                        i.fa.fa-video-camera.camera
+                    li.call-item
+                      a(href='#' title='Mute Audio' data-placement='top' data-toggle='tooltip')
+                        i.fa.fa-microphone.microphone
+                    li.call-item
+                      a(href='#' title='Add User' data-placement='top' data-toggle='tooltip')
+                        i.fa.fa-user-plus
+                    li.call-item
+                      a(href='#' title='Full Screen' data-placement='top' data-toggle='tooltip')
+                        i.fa.fa-arrows-v.full-screen
+                  .end-call
+                    a(href='#')
+                      | End Call
+          #chat_sidebar.col-lg-3.message-view.chat-profile-view.chat-sidebar
+            .chat-window.video-window
+              .fixed-header
+                ul.nav.nav-tabs.nav-tabs-bottom
+                  li.nav-item
+                    a.nav-link.active(href='#calls_tab' data-toggle='tab') Calls
+                  li.nav-item
+                    a.nav-link(href='#chats_tab' data-toggle='tab') Chats
+                  li.nav-item
+                    a.nav-link(href='#profile_tab' data-toggle='tab') Profile
+              .tab-content.chat-contents
+                #calls_tab.content-full.tab-pane.show.active
+                  .chat-wrap-inner
+                    .chat-box
+                      .chats
+                        .chat.chat-left
+                          .chat-avatar
+                            a.avatar(href='profile.html')
+                              img.img-fluid.rounded-circle(alt='John Doe' src='/assets/img/user.jpg')
+                          .chat-body
+                            .chat-bubble
+                              .chat-content
+                                span.chat-user You
+                                span.chat-time 8:35 am
+                                .call-details
+                                  i.material-icons phone_missed
+                                  .call-info
+                                    .call-user-details
+                                      span.call-description Jeffrey Warden missed the call
+                        .chat.chat-left
+                          .chat-avatar
+                            a.avatar(href='profile.html')
+                              img.img-fluid.rounded-circle(alt='John Doe' src='/assets/img/user.jpg')
+                          .chat-body
+                            .chat-bubble
+                              .chat-content
+                                span.chat-user John Doe
+                                span.chat-time 8:35 am
+                                .call-details
+                                  i.material-icons call_end
+                                  .call-info
+                                    .call-user-details
+                                      span.call-description This call has ended
+                                    .call-timing
+                                      | Duration: 
+                                      strong 5 min 57 sec
+                        .chat-line
+                          span.chat-date January 29th, 2015
+                        .chat.chat-left
+                          .chat-avatar
+                            a.avatar(href='profile.html')
+                              img.img-fluid.rounded-circle(alt='John Doe' src='/assets/img/user.jpg')
+                          .chat-body
+                            .chat-bubble
+                              .chat-content
+                                span.chat-user Richard Miles
+                                span.chat-time 8:35 am
+                                .call-details
+                                  i.material-icons phone_missed
+                                  .call-info
+                                    .call-user-details
+                                      span.call-description You missed the call
+                        .chat.chat-left
+                          .chat-avatar
+                            a.avatar(href='profile.html')
+                              img.img-fluid.rounded-circle(alt='John Doe' src='/assets/img/user.jpg')
+                          .chat-body
+                            .chat-bubble
+                              .chat-content
+                                span.chat-user You
+                                span.chat-time 8:35 am
+                                .call-details
+                                  i.material-icons ring_volume
+                                  .call-info
+                                    .call-user-details
+                                      a.call-description.call-description--linked(href='#' data-qa='call_attachment_link') Calling John Smith ...
+                #chats_tab.content-full.tab-pane
+                  .chat-window
+                    .chat-contents
+                      .chat-content-wrap
+                        .chat-wrap-inner
+                          .chat-box
+                            .chats
+                              .chat.chat-left
+                                .chat-avatar
+                                  a.avatar(href='profile.html')
+                                    img.img-fluid.rounded-circle(alt='John Doe' src='/assets/img/user.jpg')
+                                .chat-body
+                                  .chat-bubble
+                                    .chat-content
+                                      span.chat-user John Doe
+                                      span.chat-time 8:35 am
+                                      p I&apos;m just looking around.
+                                      p Will you tell me something about yourself? 
+                              .chat.chat-left
+                                .chat-avatar
+                                  a.avatar(href='profile.html')
+                                    img.img-fluid.rounded-circle(alt='John Doe' src='/assets/img/user.jpg')
+                                .chat-body
+                                  .chat-bubble
+                                    .chat-content
+                                      span.chat-user John Doe
+                                      span.file-attached
+                                        | attached 3 files 
+                                        i.fa.fa-paperclip
+                                      span.chat-time Dec 17, 2014 at 4:32am
+                                      ul.attach-list
+                                        li
+                                          i.fa.fa-file
+                                          a(href='#') project_document.avi
+                                        li
+                                          i.fa.fa-file
+                                          a(href='#') video_conferencing.psd
+                                        li
+                                          i.fa.fa-file
+                                          a(href='#') landing_page.psd
+                              .chat-line
+                                span.chat-date January 29th, 2017
+                              .chat.chat-left
+                                .chat-avatar
+                                  a.avatar(href='profile.html')
+                                    img.img-fluid.rounded-circle(alt='Jeffery Lalor' src='/assets/img/user.jpg')
+                                .chat-body
+                                  .chat-bubble
+                                    .chat-content
+                                      span.chat-user Jeffery Lalor
+                                      span.file-attached
+                                        | attached file 
+                                        i.fa.fa-paperclip
+                                      span.chat-time Yesterday at 9:16pm
+                                      ul.attach-list
+                                        li.pdf-file
+                                          i.fa.fa-file-pdf-o
+                                          a(href='#') Document_2016.pdf
+                              .chat.chat-left
+                                .chat-avatar
+                                  a.avatar(href='profile.html')
+                                    img.img-fluid.rounded-circle(alt='Jeffery Lalor' src='/assets/img/user.jpg')
+                                .chat-body
+                                  .chat-bubble
+                                    .chat-content
+                                      span.chat-user Jeffery Lalor
+                                      span.file-attached
+                                        | attached file 
+                                        i.fa.fa-paperclip
+                                      span.chat-time Today at 12:42pm
+                                      ul.attach-list
+                                        li.img-file
+                                          .attach-img-download
+                                            a(href='#') avatar-1.jpg
+                                          .attach-img
+                                            img(src='/assets/img/user.jpg' alt='')
+                    .chat-footer
+                      .message-bar
+                        .message-inner
+                          a.link.attach-icon(href='#' data-toggle='modal' data-target='#drag_files')
+                            img(src='/assets/img/attachment.png' alt='')
+                          .message-area
+                            .input-group
+                              textarea.form-control(placeholder='Type message...')
+                              span.input-group-append
+                                button.btn.btn-primary(type='button')
+                                  i.fa.fa-send
+                #profile_tab.content-full.tab-pane
+                  .display-table
+                    .table-row
+                      .table-body
+                        .table-content
+                          .chat-profile-img
+                            .edit-profile-img
+                              img(src='/assets/img/user.jpg' alt='')
+                              span.change-img Change Image
+                            h3.user-name.m-t-10.mb-0 John Doe
+                            small.text-muted MBBS, MD
+                            a.btn.btn-primary.edit-btn(href='edit-profile.html')
+                              i.fa.fa-pencil
+                          .chat-profile-info
+                            ul.user-det-list
+                              li
+                                span Username:
+                                span.float-right.text-muted johndoe
+                              li
+                                span DOB:
+                                span.float-right.text-muted 24 July
+                              li
+                                span Email:
+                                span.float-right.text-muted johndoe@example.com
+                              li
+                                span Phone:
+                                span.float-right.text-muted 9876543210
+                          div
+                            ul.nav.nav-tabs.nav-tabs-solid.nav-justified.mb-0
+                              li.nav-item
+                                a.nav-link.active(href='#all_files' data-toggle='tab') All Files
+                              li.nav-item
+                                a.nav-link(href='#my_files' data-toggle='tab') My Files
+                            .tab-content
+                              #all_files.tab-pane.show.active
+                                ul.files-list
+                                  li
+                                    .files-cont
+                                      .file-type
+                                        span.files-icon
+                                          i.fa.fa-file-pdf-o
+                                      .files-info
+                                        span.file-name.text-ellipsis AHA Selfcare Mobile Application Test-Cases.xls
+                                        span.file-author
+                                          a(href='#') Loren Gatlin
+                                        span.file-date May 31st at 6:53 PM
+                                      ul.files-action
+                                        li.dropdown.dropdown-action
+                                          a.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                                            i.fa.fa-ellipsis-h
+                                          .dropdown-menu
+                                            a.dropdown-item(href='javascript:void(0)') Download
+                                            a.dropdown-item(href='#' data-toggle='modal' data-target='#share_files') Share
+                              #my_files.tab-pane
+                                ul.files-list
+                                  li
+                                    .files-cont
+                                      .file-type
+                                        span.files-icon
+                                          i.fa.fa-file-pdf-o
+                                      .files-info
+                                        span.file-name.text-ellipsis AHA Selfcare Mobile Application Test-Cases.xls
+                                        span.file-author
+                                          a(href='#') John Doe
+                                        span.file-date May 31st at 6:53 PM
+                                      ul.files-action
+                                        li.dropdown.dropdown-action
+                                          a.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                                            i.fa.fa-ellipsis-h
+                                          .dropdown-menu
+                                            a.dropdown-item(href='javascript:void(0)') Download
+                                            a.dropdown-item(href='#' data-toggle='modal' data-target='#share_files') Share
+      #drag_files.modal.fade(role='dialog')
+        .modal-dialog.modal-dialog-centered.modal-lg
+          .modal-content
+            .modal-header
+              h3.modal-title Drag and drop files upload
+              button.close(type='button' data-dismiss='modal') &times;
+            .modal-body
+              form#js-upload-form
+                #drop-zone.upload-drop-zone
+                  i.fa.fa-cloud-upload.fa-2x
+                  span.upload-text Just drag and drop files here
+                h4 Uploading
+                ul.upload-list
+                  li.file-list
+                    .upload-wrap
+                      .file-name
+                        i.fa.fa-photo
+                        |  photo.png
+                      .file-size 1.07 gb
+                      button.file-close(type='button')
+                        i.fa.fa-close
+                    .progress.progress-xs.progress-striped
+                      .progress-bar.bg-success(role='progressbar' style='width: 65%')
+                    .upload-process 37% done
+                  li.file-list
+                    .upload-wrap
+                      .file-name
+                        i.fa.fa-file
+                        |  task.doc
+                      .file-size 5.8 kb
+                      button.file-close(type='button')
+                        i.fa.fa-close
+                    .progress.progress-xs.progress-striped
+                      .progress-bar.bg-success(role='progressbar' style='width: 65%')
+                    .upload-process 37% done
+                  li.file-list
+                    .upload-wrap
+                      .file-name
+                        i.fa.fa-photo
+                        |  dashboard.png
+                      .file-size 2.1 mb
+                      button.file-close(type='button')
+                        i.fa.fa-close
+                    .progress.progress-xs.progress-striped
+                      .progress-bar.bg-success(role='progressbar' style='width: 65%')
+                    .upload-process Completed
+              .m-t-30.text-center
+                button.btn.btn-primary.submit-btn Add to upload
+      #add_group.modal.fade
+        .modal-dialog.modal-dialog-centered
+          .modal-content
+            .modal-header
+              h3.modal-title Create a group
+              button.close(type='button' data-dismiss='modal') &times;
+            .modal-body
+              p
+                | Groups are where your team communicates. They&rsquo;re best when organized around a topic &mdash; #leads, for example.
+              form
+                .form-group
+                  label
+                    | Group Name 
+                    span.text-danger *
+                  input.form-control(type='text')
+                .form-group
+                  label
+                    | Send invites to: 
+                    span.text-muted-light (optional)
+                  input.form-control(type='text')
+                .m-t-50.text-center
+                  button.btn.btn-primary.submit-btn Create Group
+      #add_chat_user.modal.fade(role='dialog')
+        .modal-dialog.modal-dialog-centered
+          .modal-content
+            .modal-header
+              h3.modal-title Create Chat Group
+              button.close(type='button' data-dismiss='modal') &times;
+            .modal-body
+              .input-group.m-b-30
+                input#btn-input.form-control.search-input(placeholder='Search to start a chat' type='text')
+                span.input-group-append
+                  button.btn.btn-primary Search
+              div
+                h5 Recent Conversations
+                ul.chat-user-list
+                  li
+                    a(href='#')
+                      .media
+                        span.avatar.align-self-center J
+                        .media-body.align-self-center.text-nowrap
+                          .user-name Jeffery Lalor
+                          span.designation Team Leader
+                        .text-nowrap.align-self-center
+                          .online-date 1 day ago
+                  li
+                    a(href='#')
+                      .media
+                        span.avatar.align-self-center B
+                        .media-body.align-self-center.text-nowrap
+                          .user-name Bernardo Galaviz
+                          span.designation MBBS, MD
+                        .align-self-center.text-nowrap
+                          .online-date 3 days ago
+                  li
+                    a(href='#')
+                      .media
+                        span.avatar.align-self-center
+                          img(src='/assets/img/user.jpg' alt='John Doe')
+                        .media-body.text-nowrap.align-self-center
+                          .user-name John Doe
+                          span.designation MBBS, MD
+                        .align-self-center.text-nowrap
+                          .online-date 7 months ago
+              .m-t-50.text-center
+                button.btn.btn-primary.submit-btn Create Group
+      #share_files.modal.fade(role='dialog')
+        .modal-dialog.modal-dialog-centered.modal-lg
+          .modal-content
+            .modal-header
+              h3.modal-title Share File
+              button.close(type='button' data-dismiss='modal') &times;
+            .modal-body
+              .files-share-list
+                .files-cont
+                  .file-type
+                    span.files-icon
+                      i.fa.fa-file-pdf-o
+                  .files-info
+                    span.file-name.text-ellipsis AHA Selfcare Mobile Application Test-Cases.xls
+                    span.file-author
+                      a(href='#') Bernardo Galaviz
+                    span.file-date May 31st at 6:53 PM
+              .form-group
+                label Share With
+                input.form-control(type='text')
+              .m-t-50.text-center
+                button.btn.btn-primary.submit-btn Share
+  .sidebar-overlay(data-reff='')
+  script(src='/assets/js/jquery-3.2.1.min.js')
+  script(src='/assets/js/popper.min.js')
+  script(src='/assets/js/bootstrap.min.js')
+  script(src='/assets/js/jquery.slimscroll.js')
+  script(src='/assets/js/app.js')
+  // video-call23:31

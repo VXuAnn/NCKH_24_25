@@ -1,0 +1,54 @@
+extends ../../layouts/default.pug
+block main 
+  .page-wrapper
+    .content
+      .row
+        .col-sm-12
+          h4.page-title Payments
+      .row
+        .col-md-12
+          .table-responsive
+            table.table.table-striped.custom-table.datatable.mb-0
+              thead
+                tr
+                  th Invoice ID
+                  th Patient
+                  th Payment Type
+                  th Paid Date
+                  th Paid Amount
+              tbody
+                tr
+                  td
+                    a(href='invoice-view.html') #INV-0001
+                  td
+                    h2
+                      a(href='#') Charles Ortega
+                  td Paypal
+                  td 8 Aug 2017
+                  td $500
+                tr
+                  td
+                    a(href='invoice-view.html') #INV-0002
+                  td
+                    h2
+                      a(href='#') Denise Stevens
+                  td Paypal
+                  td 8 Aug 2017
+                  td $500
+                tr
+                  td
+                    a(href='invoice-view.html') #INV-0003
+                  td
+                    h2
+                      a(href='#') Dennis Salazar
+                  td Paypal
+                  td 8 Aug 2017
+                  td $500
+    .sidebar-overlay(data-reff='')
+    script(src='assets/js/jquery-3.2.1.min.js')
+    script(src='assets/js/popper.min.js')
+    script(src='assets/js/bootstrap.min.js')
+    script(src='assets/js/jquery.dataTables.min.js')
+    script(src='assets/js/dataTables.bootstrap4.min.js')
+    script(src='assets/js/jquery.slimscroll.js')
+    script(src='assets/js/app.js')

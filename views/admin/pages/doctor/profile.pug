@@ -1,0 +1,77 @@
+extends ../../layouts/default.pug
+block main
+  .page-wrapper
+    .content
+      .row
+        .col-sm-7.col-6
+          h4.page-title My Profile
+        .col-sm-5.col-6.text-right.m-b-30
+          a.btn.btn-primary.btn-rounded.m-r-5(href=`/${prefixAdmin}/doctor/edit/${doctor.id}`)
+            i.fa.fa-plus
+            |  Edit Profile
+          a.btn.btn-danger.btn-rounded(button-delete=`/${prefixAdmin}/doctor/delete/${doctor.id}`)
+            i.fa.fa-trash
+            |  Delete
+      .card-box.profile-header
+        .row
+          .col-md-12
+            .profile-view
+              .profile-img-wrap
+                .profile-img
+                  a(href='#')
+                    img.avatar(src='/assets/img/doctor-03.jpg' alt='')
+              .profile-basic
+                .row
+                  .col-md-5
+                    .profile-info-left
+                      h3.user-name.m-t-0.mb-0 #{doctor.fullName}
+                      small.text-muted #{doctor.qualification}
+                      .staff-id Doctor ID : #{doctor.id}
+                      .staff-msg
+                        //- a.btn.btn-primary(href='chat.html') Send Message
+                  .col-md-7
+                    ul.personal-info
+                      li
+                        span.title Phone:
+                        span.text
+                          a(href='#') #{doctor.phone}
+                      li
+                        span.title Email:
+                        span.text
+                          a(href='#') #{doctor.email}
+                      li
+                        span.title Birthday:  
+                        span.text #{new Date(doctor.birthday).toLocaleDateString('vi-VN')}
+                      li
+                        span.title Address:
+                        span.text #{doctor.address}
+                      li
+                        span.title Gender:
+                        span.text #{doctor.gender ? 'Male' : 'Female'}
+      .profile-tabs
+        .tab-content
+          #about-cont.tab-pane.show.active
+            .row
+              .col-md-12
+                .card-box
+                  h3.card-title Education Informations
+                  .experience-box
+                    ul.experience-list
+                        li
+                            a.name(href='#/') #{doctor.degree}
+                .card-box.mb-0
+                  h3.card-title Certifications
+                  .experience-box
+                    ul.experience-list
+                        li
+                        .experience-user
+                          .before-circle
+                        .experience-content
+                          .timeline-content
+                            a.name(href='#/') #{doctor.specialization} 
+  .sidebar-overlay(data-reff='')
+  script(src='/assets/js/jquery-3.2.1.min.js')
+  script(src='/assets/js/popper.min.js')
+  script(src='/assets/js/bootstrap.min.js')
+  script(src='/assets/js/jquery.slimscroll.js')
+  script(src='/assets/js/app.js')

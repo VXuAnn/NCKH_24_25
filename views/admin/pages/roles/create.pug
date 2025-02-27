@@ -1,0 +1,43 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            h4.page-title Add Role
+        .row
+          .col-lg-8.offset-lg-2
+            form(
+              action=`/${prefixAdmin}/roles/create`
+              method="POST"
+            )
+              .form-group
+                label(for="title")
+                  |  Tiêu đề
+                input(
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  required
+                )
+                label(for="desc")
+                  |  Mô tả
+                input(
+                  type="text"
+                  class="form-control"
+                  id="desc"
+                  name="description"
+                )
+                .text-center.m-t-20
+                  button.btn.btn-primary.submit-btn(type="submit") Create Role
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/tagsinput.js')
+  script(src='assets/js/app.js')

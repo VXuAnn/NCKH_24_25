@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Login Page
+    link(rel='stylesheet' type='text/css' href='/assets/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/font-awesome.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/select2.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/style.css')
+  body
+    block main
+      .main-wrapper.account-wrapper
+        .account-page
+          .account-center
+            .account-box
+              form.form-signin(action='#')
+            .account-logo
+              a(href='index-2.html')
+                img(src='assets/img/logo-dark.png' alt='')
+            .form-group
+              label Enter Your Email
+              input.form-control(type='text' autofocus='')
+            .form-group.text-center
+              button.btn.btn-primary.account-btn(type='submit') Reset Password
+            .text-center.register-link
+              a(href="/user/login") Back to Login
+    script(src='/assets/js/jquery-3.2.1.min.js')
+    script(src='/assets/js/popper.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/app.js')

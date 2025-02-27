@@ -1,0 +1,187 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            form
+              h3.page-title Salary Settings
+              .row
+                .col-sm-6
+                  .form-group
+                    label DA (%)
+                    input.form-control(type='text')
+                .col-sm-6
+                  .form-group
+                    label HRA (%)
+                    input.form-control(type='text')
+              h3.page-sub-title Provident Fund Settings
+              .row
+                .col-sm-6
+                  .form-group
+                    label Employee Share (%)
+                    input.form-control(type='text')
+                .col-sm-6
+                  .form-group
+                    label Organization Share (%)
+                    input.form-control(type='text')
+              h3.page-sub-title ESI Settings
+              .row
+                .col-sm-6
+                  .form-group
+                    label Employee Share (%)
+                    input.form-control(type='text')
+                .col-sm-6
+                  .form-group
+                    label Organization Share (%)
+                    input.form-control(type='text')
+              .row
+                .col-sm-12.text-center.m-t-20
+                  button.btn.btn-primary.submit-btn(type='button') Save
+      .notification-box
+        .msg-sidebar.notifications.msg-noti
+          .topnav-dropdown-header
+            span Messages
+          #msg_list.drop-scroll.msg-list-scroll
+            ul.list-box
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar R
+                    .list-body
+                      span.message-author Richard Miles 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item.new-message
+                    .list-left
+                      span.avatar J
+                    .list-body
+                      span.message-author John Doe
+                      span.message-time 1 Aug
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar T
+                    .list-body
+                      span.message-author  Tarah Shropshire 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar M
+                    .list-body
+                      span.message-author Mike Litorus
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar C
+                    .list-body
+                      span.message-author  Catherine Manseau 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar D
+                    .list-body
+                      span.message-author  Domenic Houston 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar B
+                    .list-body
+                      span.message-author  Buster Wigton 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar R
+                    .list-body
+                      span.message-author  Rolland Webber 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar C
+                    .list-body
+                      span.message-author  Claire Mapes 
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar M
+                    .list-body
+                      span.message-author Melita Faucher
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar J
+                    .list-body
+                      span.message-author Jeffery Lalor
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar L
+                    .list-body
+                      span.message-author Loren Gatlin
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+              li
+                a(href='chat.html')
+                  .list-item
+                    .list-left
+                      span.avatar T
+                    .list-body
+                      span.message-author Tarah Shropshire
+                      span.message-time 12:28 AM
+                      .clearfix
+                      span.message-content Lorem ipsum dolor sit amet, consectetur adipiscing
+          .topnav-dropdown-footer
+            a(href='chat.html') See all messages
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/app.js')
+  // salary-settings24:06
