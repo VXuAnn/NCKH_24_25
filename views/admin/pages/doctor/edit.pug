@@ -24,13 +24,14 @@ block main
                       id="fullName"
                       name = "fullName"
                       required 
+                      value=doctor.fullName
                       )
                 .col-sm-6
                   .form-group
                     label
                       | Email 
                       span.text-danger *
-                    input.form-control(type='email' id = "email" name ="email")
+                    input.form-control(type='email' id = "email" name ="email" value=doctor.email)
                 .col-sm-6
                   .form-group
                     label Password
@@ -44,13 +45,13 @@ block main
                   .form-group
                     label Date of Birth
                     .cal-icon
-                      input.form-control.datetimepicker(type='text' id ="date" name="birthday")
+                      input.form-control.datetimepicker(type='text' id ="date" name="birthday" value=doctor.birthday)
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group
-                    label Role
-                    select.form-control(name="role")
-                      each role in roles
-                        option(value=role._id) #{role.title}
+                    label Degree
+                    select.form-control(name="degree")
+                      each degree in degrees
+                        option(value=degree.title selected=(degree.title === doctor.degree ? true : false)) #{degree.title}
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group.gender-select
                     label.gen-label Gender:
@@ -78,35 +79,24 @@ block main
                     .col-sm-12
                       .form-group
                         label(for="address") Address
-                        input.form-control(type='text' id=" address" name= "address")
-                .col-sm-6
-                  .row
-                    .col-sm-12
-                      .form-group
-                        label(for="workPlace") Work Place
-                        input.form-control(type='text' id = "workPlace" name = "workPlace")
+                        input.form-control(type='text' id=" address" name= "address" value=doctor.address)
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group
-                    label Degree
-                    select.form-control(name="degree")
-                      each degree in degrees
-                        option(value=degree.title) #{degree.title}
+                    label Facility
+                    select.form-control(name="facility")
+                      each facility in facilities
+                        option(value=facility._id) #{facility.name}
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group
-                    label Qualification
-                    select.form-control(name =  "qualification")
-                      each department in departments
-                        option(value=department.title) #{department.title}
+                    label(for="phone")  Phone 
+                    input.form-control(type='text' id= "phone" name ="phone" value=doctor.phone)
                 .col-sm-6
                   .row
                     .col-sm-12
                       .form-group
                         label(for="spec") Specialization
-                        input.form-control(type='text' id= "spec" name ="spec")
-                .col-sm-6
-                  .form-group
-                    label(for="phone")  Phone 
-                    input.form-control(type='text' id= "phone" name ="phone")
+                        input.form-control(type='text' id= "spec" name ="spec" value=doctor.qualification)
+                
                 .col-sm-6
                   .form-group
                     label(for="thumbnail")  Avatar
@@ -119,12 +109,12 @@ block main
               .m-t-20.text-center
                 button.btn.btn-primary.submit-btn Save
   .sidebar-overlay(data-reff='')
-  script(src='/assets/js/jquery-3.2.1.min.js')
-  script(src='/assets/js/popper.min.js')
-  script(src='/assets/js/bootstrap.min.js')
-  script(src='/assets/js/jquery.slimscroll.js')
-  script(src='/assets/js/select2.min.js')
-  script(src='/assets/js/moment.min.js')
-  script(src='/assets/js/bootstrap-datetimepicker.min.js')
-  script(src='/assets/js/app.js')
+  script(src='~/assets/js/jquery-3.2.1.min.js')
+  script(src='~/assets/js/popper.min.js')
+  script(src='~/assets/js/bootstrap.min.js')
+  script(src='~/assets/js/jquery.slimscroll.js')
+  script(src='~/assets/js/select2.min.js')
+  script(src='~/assets/js/moment.min.js')
+  script(src='~/assets/js/bootstrap-datetimepicker.min.js')
+  script(src='~/assets/js/app.js')
   // add-doctor24:06

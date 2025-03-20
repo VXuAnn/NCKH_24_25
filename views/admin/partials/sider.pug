@@ -19,10 +19,6 @@
                 i.fa.fa-calendar
                 span Appointments
             li
-              //- a(href=`/${prefixAdmin}/doctor/schedule`)
-              //-   i.fa.fa-calendar-check-o
-              //-   span Doctor Schedule
-            li
               a(href='/admin/medicine')
                 i.fa.fa-plus-square
                 span Medicines
@@ -30,53 +26,45 @@
               a(href='/admin/disease')
                 i.fa.fa-medkit
                 span Diseases
-            li
-              a(href=`/${prefixAdmin}/accounts`)
-                i.fa.fa-user
-                span Tài khoản 
-            li
-              a(href=`/${prefixAdmin}/roles/permissions`)
-                i.fa.fa-key
-                span Phân quyền
+            //- li
+            //-   a(href=`/${prefixAdmin}/accounts`)
+            //-     i.fa.fa-user
+            //-     span Tài khoản 
+            //- li
+            //-   a(href=`/${prefixAdmin}/roles/permissions`)
+            //-     i.fa.fa-key
+            //-     span Phân quyền
             li
               a(href=`/${prefixAdmin}/roles`)
                 i.fa.fa-users
                 span Nhóm quyền
           
-            li.submenu
-              a(href='#')
-                i.fa.fa-money
-                span  Accounts 
-                span.menu-arrow
-              ul(style='display: none;')
-                li
-                  a(href=`/${prefixAdmin}/accounts`) Invoices
-                li
-                  a(href=`/${prefixAdmin}/accounts/payment`) Payments
-            li.submenu
-              a(href='#')
-                i.fa.fa-book
-                span  Payroll 
-                span.menu-arrow
-              ul(style='display: none;')
-                li
-                  a(href=`/${prefixAdmin}/salary`)  Employee Salary 
-                li
-                  a(href=`/${prefixAdmin}/salary/paySlip`)  Payslip 
-            li.submenu
-              a(href='#')
-                i.fa.fa-commenting-o
-                span  Blog
-                span.menu-arrow
-              ul(style='display: none;')
-                li
-                  a(href='/admin/blog') Blog
-                li
-                  a(href=`/${prefixAdmin}/blog/add`) Add Blog
-                li
-                  a(href=`/${prefixAdmin}/blog/edit`) Edit Blog
-     
+            //- li.submenu
+            //-   a(href='#')
+            //-     i.fa.fa-money
+            //-     span  Accounts 
+            //-     span.menu-arrow
+            //-   ul(style='display: none;')
+            //-     li
+            //-       a(href=`/${prefixAdmin}/accounts`) Invoices
+            //-     li
+            //-       a(href=`/${prefixAdmin}/accounts/payment`) Payments
+            //- li.submenu
+            //-   a(href='#')
+            //-     i.fa.fa-book
+            //-     span  Payroll 
+            //-     span.menu-arrow
+            //-   ul(style='display: none;')
+            //-     li
+            //-       a(href=`/${prefixAdmin}/salary`)  Employee Salary 
+            //-     li
+            //-       a(href=`/${prefixAdmin}/salary/paySlip`)  Payslip 
+            
             li
-              a(href='/admin/setting')
+              a(href=`/${prefixAdmin}/blog`)
+                i.fa.fa-newspaper-o
+                span News
+            li
+              a(href=`/${prefixAdmin}/setting`)
                 i.fa.fa-cog
                 span Settings

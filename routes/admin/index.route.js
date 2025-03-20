@@ -10,7 +10,6 @@ const settingRoute = require("./setting.route");
 const medicineRoute = require("./medicine.route");
 const accountRoute =require("./account.route");
 const roleRoute =require("./role.route")
-const salaryRoute =require("./salary.route")
 const diseaseRoute =require("./disease.route")
 
 
@@ -53,6 +52,5 @@ module.exports.index = (app) => {
   app.use(`${path}/auth`, authRoute);
   app.use(`${path}/accounts`,accountRoute);
   app.use(`${path}/roles`,roleRoute);
-  app.use(`${path}/salary`,salaryRoute);
   app.use(`${path}/disease`,diseaseRoute);
 }

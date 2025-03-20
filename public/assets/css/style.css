@@ -68,6 +68,25 @@ body {
 	overflow-x: hidden;
 	height: 100%;
 }
+.search-results {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.result-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.result-item:hover {
+  background: #f0f0f0;
+}
+
 h1,
 h2,
 h3,

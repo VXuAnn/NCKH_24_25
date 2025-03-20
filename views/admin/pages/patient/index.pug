@@ -24,7 +24,7 @@ block main
                       td
                         img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
                         |  #{patient.fullName}
-                      td #{new Date().getFullYear() - new Date(patient.dob).getFullYear()} 
+                      td #{new Date().getFullYear() - new Date(patient.dateOfBirth).getFullYear()} 
                       td #{patient.address}
                       td #{patient.phone}
                       td #{patient.email}

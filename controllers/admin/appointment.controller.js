@@ -1,37 +1,34 @@
 const Appointment = require("../../models/appointment.model");
+const User = require("../../models/patient.model");
+const Doctor = require("../../models/doctor.model");
+const Facility = require("../../models/facility.model");
 
-// [GET] /admin/profile
+// [GET] /admin/appointment
 module.exports.index = async (req, res) => {
   try {
-    // const appointments = await Appointment.find({ deleted: false })
-    //   .populate("patientId", "fullName")
-    //   .populate("doctorId", "fullName")
-    //   .populate("department", "title");
+    const appointments = await Appointment.find({})
+      .populate("user_id", "fullName dateOfBirth") 
+      .populate("doctor_id", "fullName") 
+      .populate("facility_id", "name")
+      .lean(); 
 
-    // console.log("Appointments:", JSON.stringify(appointments, null, 2));
-    const appointments = await Appointment.find({ deleted: false })
-  .populate("patientId", "fullName")
-  .populate("doctorId", "fullName")
-  .populate("department", "title")
-  .lean(); // Chuyển sang object JS thuần
+    // Tính tuổi bệnh nhân
+    appointments.forEach((appointment) => {
+      if (appointment.user_id && appointment.user_id.dateOfBirth) {
+        const birthDate = new Date(appointment.user_id.dateOfBirth);
+        const age = new Date().getFullYear() - birthDate.getFullYear();
+        appointment.age = age;
+      } else {
+        appointment.age = "N/A"; // Nếu không có ngày sinh, hiển thị N/A
+      }
+    });
 
-// Đảm bảo `department` là object hợp lệ
-appointments.forEach(app => {
-  if (typeof app.department === "string") {
-    try {
-      // Loại bỏ các ký tự không hợp lệ trong JSON
-      app.department = app.department.replace(/_id: new ObjectId\('.*?'\),?\s*/g, "").trim();
-      app.department = JSON.parse(app.department);
-    } catch (e) {
-      console.error("Lỗi khi parse department:", e);
-      app.department = { title: "Không xác định" };
-    }
-  }
-});
+    // Log danh sách cuộc hẹn để kiểm tra dữ liệu
+    console.log("Danh sách cuộc hẹn:", JSON.stringify(appointments, null, 2));
 
     res.render("admin/pages/appointment/index", {
       pageTitle: "Thông tin cuộc hẹn",
-      appointments: appointments
+      appointments
     });
   } catch (error) {
     console.error(error);

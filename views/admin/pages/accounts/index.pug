@@ -13,22 +13,8 @@ block main
       .row.filter-row
         .col-sm-6.col-md-3
           .form-group.form-focus
-            label.focus-label Employee ID
-            input.form-control.floating(type='text')
-        .col-sm-6.col-md-3
-          .form-group.form-focus
             label.focus-label Employee Name
             input.form-control.floating(type='text')
-        .col-sm-6.col-md-3
-          .form-group.form-focus.select-focus
-            label.focus-label Role
-            select.select.floating
-              option Select Role
-              option Nurse
-              option Pharmacist
-              option Laboratorist
-              option Accountant
-              option Receptionist
         .col-sm-6.col-md-3
           a.btn.btn-success.btn-block(href='#')  Search 
       .row
@@ -38,34 +24,27 @@ block main
               thead
                 tr
                   th(style='min-width:200px;') Name
-                  th Employee ID
                   th Email
                   th Mobile
-                  th(style='min-width: 110px;') Join Date
                   th Role
                   th.text-right Action
               tbody
-                tr
-                  td
-                    img.rounded-circle(width='28' height='28' src='assets/img/user.jpg' alt='')
-                    h2 Albina Simonis
-                  td NS-0001
-                  td albinasimonis@example.com
-                  td 828-634-2744
-                  td 7 May 2015
-                  td
-                    span.custom-badge.status-green Nurse
-                  td.text-right
-                    .dropdown.dropdown-action
-                      a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
-                        i.fa.fa-ellipsis-v
-                      .dropdown-menu.dropdown-menu-right
-                        a.dropdown-item(href='edit-employee.html')
-                          i.fa.fa-pencil.m-r-5
-                          |  Edit
-                        a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_employee')
-                          i.fa.fa-trash-o.m-r-5
-                          |  Delete
+                each account in accounts
+                  tr
+                    td
+                      img.rounded-circle(width='28' height='28' src=(account.avatar || 'assets/img/user.jpg') alt='')
+                      h2 #{account.fullName}
+                    td #{account.email}
+                    td #{account.phone}
+                    td
+                      span.custom-badge.status-green #{account.role_id} 
+                    td.text-right
+                      a.btn.btn-sm.btn-primary.m-r-5(href=`/${prefixAdmin}/accounts/edit/${account._id}`)
+                        i.fa.fa-pencil.m-r-5
+                        | Edit
+                      button.btn.btn-sm.btn-danger(data-toggle='modal' data-target='#delete_employee' data-id=`#{account._id}`)
+                        i.fa.fa-trash-o.m-r-5
+                        | Delete
                 
     #delete_employee.modal.fade.delete-modal(role='dialog')
       .modal-dialog.modal-dialog-centered

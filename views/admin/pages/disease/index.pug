@@ -7,7 +7,7 @@ block main
         .col-sm-4.col-3
           h4.page-title Disease
         .col-sm-8.col-9.text-right.m-b-20
-          a.btn.btn-primary.float-right.btn-rounded(href=`/${prefixAdmin}/disease/create`)
+          a.btn.btn-primary.float-right.btn-rounded(href=`/${prefixAdmin}/disease/add`)
             i.fa.fa-plus
             |  Add Disease
       .row.filter-row
@@ -19,8 +19,6 @@ block main
           .form-group.form-focus.select-focus
             label.focus-label Type
             select.form-control(name="type")
-              //- each type in typemedicines 
-              //-   option(value=type.title) #{type.title}
         .col-sm-6.col-md-3
           a.btn.btn-success.btn-block(href='#')  Search 
       .row
@@ -29,11 +27,23 @@ block main
             table.table.table-striped.custom-table
               thead
                 tr
-                  th Position
                   th Name
-                  th Type
+                  th Label
+                  th Description
                   th.text-right Action
                 tbody
+                  each disease in diseases
+                    tr
+                      td= disease.name
+                      td= disease.label
+                      td= disease.desc
+                      td.text-right
+                        a.btn.btn-primary.btn-sm(href=`/${prefixAdmin}/disease/edit/${disease._id}`)
+                          i.fa.fa-pencil
+                          |  Edit
+                        button.btn.btn-danger.btn-sm(data-toggle='modal' data-target='#delete_employee' data-id=disease._id)
+                          i.fa.fa-trash-o
+                          |  Delete
     #delete_employee.modal.fade.delete-modal(role='dialog')
       .modal-dialog.modal-dialog-centered
         .modal-content
@@ -44,13 +54,13 @@ block main
               a.btn.btn-white(href='#' data-dismiss='modal') Close
               button.btn.btn-danger(type='submit') Delete
   .sidebar-overlay(data-reff='')
-  script(src='assets/js/jquery-3.2.1.min.js')
-  script(src='assets/js/popper.min.js')
-  script(src='assets/js/bootstrap.min.js')
-  script(src='assets/js/jquery.dataTables.min.js')
-  script(src='assets/js/dataTables.bootstrap4.min.js')
-  script(src='assets/js/jquery.slimscroll.js')
-  script(src='assets/js/select2.min.js')
-  script(src='assets/js/moment.min.js')
-  script(src='assets/js/bootstrap-datetimepicker.min.js')
-  script(src='assets/js/app.js')
+  script(src='~/assets/js/jquery-3.2.1.min.js')
+  script(src='~/assets/js/popper.min.js')
+  script(src='~/assets/js/bootstrap.min.js')
+  script(src='~/assets/js/jquery.dataTables.min.js')
+  script(src='~/assets/js/dataTables.bootstrap4.min.js')
+  script(src='~/assets/js/jquery.slimscroll.js')
+  script(src='~/assets/js/select2.min.js')
+  script(src='~/assets/js/moment.min.js')
+  script(src='~/assets/js/bootstrap-datetimepicker.min.js')
+  script(src='~/assets/js/app.js')

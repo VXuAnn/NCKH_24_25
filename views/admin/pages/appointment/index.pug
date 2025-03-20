@@ -7,10 +7,6 @@ block main
         .row
           .col-sm-4.col-3
             h4.page-title Appointments
-          //- .col-sm-8.col-9.text-right.m-b-20
-          //-   a.btn.btn.btn-primary.btn-rounded.float-right(href='add-appointment.html')
-          //-     i.fa.fa-plus
-          //-     |  Add Appointment
         .row
           .col-md-12
             .table-responsive
@@ -20,38 +16,40 @@ block main
                     th Patient Name
                     th Age
                     th Doctor Name
-                    th Department
+                    th Facility
                     th Appointment Date
                     th Appointment Time
                     th Status
-                    th.text-right Action
+                    //- th.text-right Action
                 tbody
                   each appointment in appointments
                     tr
-                      td= appointment.patientId.fullName
+                      td= appointment.user_id.fullName
                       td= appointment.age
-                      td= appointment.doctorId.fullName
-                      td= appointment.department.title
-                      td= new Date(appointment.appointmentDate).toLocaleDateString("vi-VN")
+                      td= appointment.doctor_id.fullName
+                      td= appointment.facility_id.name
+                      td= new Date(appointment.date).toLocaleDateString("vi-VN")
                       td= appointment.appointmentTime
                       td
-                        if appointment.status === "Scheduled"
-                          span.custom-badge.status-green Scheduled
-                        else if appointment.status === "Completed"
-                          span.custom-badge.status-blue Completed
-                        else
+                        if appointment.status === "pending"
+                          span.custom-badge.status-green Pending
+                        else if appointment.status === "confirmed"
+                          span.custom-badge.status-blue Confirmed
+                        else if appointment.status === "completed"
+                          span.custom-badge.status-gray Completed
+                        else if appointment.status === "cancelled"
                           span.custom-badge.status-red Cancelled
-                      td.text-right
-                        .dropdown.dropdown-action
-                          a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
-                            i.fa.fa-ellipsis-v
-                          .dropdown-menu.dropdown-menu-right
-                            a.dropdown-item(href='edit-appointment.html')
-                              i.fa.fa-pencil.m-r-5
-                              |  Edit
-                            a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_appointment')
-                              i.fa.fa-trash-o.m-r-5
-                              |  Delete
+                      //- td.text-right
+                      //-   .dropdown.dropdown-action
+                      //-     a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
+                      //-       i.fa.fa-ellipsis-v
+                      //-     .dropdown-menu.dropdown-menu-right
+                      //-       a.dropdown-item(href='edit-appointment.html')
+                      //-         i.fa.fa-pencil.m-r-5
+                      //-         |  Edit
+                      //-       a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_appointment')
+                      //-         i.fa.fa-trash-o.m-r-5
+                      //-         |  Delete
       #delete_appointment.modal.fade.delete-modal(role='dialog')
         .modal-dialog.modal-dialog-centered
           .modal-content
@@ -71,4 +69,3 @@ block main
         format: 'LT'
         });
         });
-      // appointments23:20

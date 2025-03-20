@@ -1,0 +1,58 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            h4.page-title Edit Disease
+        .row
+          .col-lg-8.offset-lg-2
+            form(
+              action=`/${prefixAdmin}/disease/edit/${disease.id}?_method=PATCH`
+              method="POST"
+              enctype="multipart/form-data"
+            )
+              .form-group
+                label(for="title")
+                  | Name
+                input(
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  value=disease.name
+                  required
+                )
+              .form-group
+                label(for="label")
+                  | Label
+                input(
+                  type="text"
+                  class="form-control"
+                  id="label"
+                  name="label"
+                  value=disease.label
+                  required
+                )
+              .form-group
+                label(for="desc")
+                  | Mô tả
+                input(
+                  type="text"
+                  class="form-control"
+                  id="desc"
+                  name="description"
+                  value=disease.desc
+                )
+              .text-center.m-t-20
+                button.btn.btn-primary.submit-btn(type="submit") Save Changes
+  .sidebar-overlay(data-reff='')
+  script(src='assets/js/jquery-3.2.1.min.js')
+  script(src='assets/js/popper.min.js')
+  script(src='assets/js/bootstrap.min.js')
+  script(src='assets/js/jquery.slimscroll.js')
+  script(src='assets/js/select2.min.js')
+  script(src='assets/js/tagsinput.js')
+  script(src='assets/js/app.js')

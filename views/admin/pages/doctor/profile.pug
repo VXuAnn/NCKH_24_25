@@ -9,7 +9,7 @@ block main
           a.btn.btn-primary.btn-rounded.m-r-5(href=`/${prefixAdmin}/doctor/edit/${doctor.id}`)
             i.fa.fa-plus
             |  Edit Profile
-          a.btn.btn-danger.btn-rounded(button-delete=`/${prefixAdmin}/doctor/delete/${doctor.id}`)
+          a.btn.btn-danger.btn-rounded(href =`/${prefixAdmin}/doctor/delete/${doctor.id}`)
             i.fa.fa-trash
             |  Delete
       .card-box.profile-header
@@ -19,13 +19,12 @@ block main
               .profile-img-wrap
                 .profile-img
                   a(href='#')
-                    img.avatar(src='/assets/img/doctor-03.jpg' alt='')
+                    img.avatar(src=`${doctor.avatar}` alt='')
               .profile-basic
                 .row
                   .col-md-5
                     .profile-info-left
                       h3.user-name.m-t-0.mb-0 #{doctor.fullName}
-                      small.text-muted #{doctor.qualification}
                       .staff-id Doctor ID : #{doctor.id}
                       .staff-msg
                         //- a.btn.btn-primary(href='chat.html') Send Message
@@ -48,6 +47,9 @@ block main
                       li
                         span.title Gender:
                         span.text #{doctor.gender ? 'Male' : 'Female'}
+                      li
+                        span.title Facility:
+                        span.text #{doctor.facility_id.name}
       .profile-tabs
         .tab-content
           #about-cont.tab-pane.show.active
@@ -59,16 +61,7 @@ block main
                     ul.experience-list
                         li
                             a.name(href='#/') #{doctor.degree}
-                .card-box.mb-0
-                  h3.card-title Certifications
-                  .experience-box
-                    ul.experience-list
-                        li
-                        .experience-user
-                          .before-circle
-                        .experience-content
-                          .timeline-content
-                            a.name(href='#/') #{doctor.specialization} 
+                
   .sidebar-overlay(data-reff='')
   script(src='/assets/js/jquery-3.2.1.min.js')
   script(src='/assets/js/popper.min.js')

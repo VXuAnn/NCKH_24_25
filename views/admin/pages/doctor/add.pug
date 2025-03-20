@@ -47,10 +47,10 @@ block main
                       input.form-control.datetimepicker(type='text' id ="date" name="birthday")
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group
-                    label Role
-                    select.form-control(name="role")
-                      each role in roles
-                        option(value=role._id) #{role.title}
+                    label Degree
+                    select.form-control(name="degree")
+                      each degree in degrees
+                        option(value=degree.title) #{degree.title}
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group.gender-select
                     label.gen-label Gender:
@@ -79,34 +79,23 @@ block main
                       .form-group
                         label(for="address") Address
                         input.form-control(type='text' id=" address" name= "address")
-                .col-sm-6
-                  .row
-                    .col-sm-12
-                      .form-group
-                        label(for="workPlace") Work Place
-                        input.form-control(type='text' id = "workPlace" name = "workPlace")
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group
-                    label Degree
-                    select.form-control(name="degree")
-                      each degree in degrees
-                        option(value=degree.title) #{degree.title}
+                    label Facility
+                    select.form-control(name="facility")
+                      each facility in facilities
+                        option(value=facility._id) #{facility.name}
                 .col-sm-6.col-md-6.col-lg-3
                   .form-group
-                    label Qualification
-                    select.form-control(name =  "qualification")
-                      each department in departments
-                        option(value=department.title) #{department.title}
+                    label(for="phone")  Phone 
+                    input.form-control(type='text' id= "phone" name ="phone")
                 .col-sm-6
                   .row
                     .col-sm-12
                       .form-group
                         label(for="spec") Specialization
                         input.form-control(type='text' id= "spec" name ="spec")
-                .col-sm-6
-                  .form-group
-                    label(for="phone")  Phone 
-                    input.form-control(type='text' id= "phone" name ="phone")
+
                 .col-sm-6
                   .form-group
                     label(for="thumbnail")  Avatar
@@ -114,7 +103,7 @@ block main
                       .upload-img
                         img(alt='' src='assets/img/user.jpg')
                       .upload-input
-                        input.form-control-file(type='file' id="thumbnail" name= "thumbnail" accept="image/* upload-image-input" )
+                        input.form-control-file(type='file' id="avatar" name="avatar" accept="image/*")
                 
                     
               .form-group.m-t-20.text-center

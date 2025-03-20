@@ -25,11 +25,13 @@ module.exports.loginPost = async (req, res) => {
     req.flash("error", "Email không tồn tại!");
     return res.redirect("back");
   }
+  // Ghi log tài khoản đăng nhập
+  console.log("Tài khoản đăng nhập:", user);
 
   // Kiểm tra mật khẩu
   if (md5(password) !== user.password) {
     req.flash("error", "Sai mật khẩu!");
-    return res.redirect("back");
+    res.redirect(req.get("Referrer") || "/");
   }
 
   // Kiểm tra trạng thái tài khoản

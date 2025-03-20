@@ -10,6 +10,7 @@ module.exports.index = async(req, res) => {
   const patients =await Patient.find({
     deleted:false
   })
+  const appointments = await Appointment.find({})
   const doctorCount = await Doctor.countDocuments({ deleted: false });
   const patientCount = await Patient.countDocuments({ deleted: false });
   const appointmentCount = await Appointment.countDocuments({ deleted: false });
@@ -19,6 +20,7 @@ module.exports.index = async(req, res) => {
     patients:patients,
     doctorCount,
     patientCount,
-    appointmentCount
+    appointmentCount,
+    appointments: appointments
   });
 }

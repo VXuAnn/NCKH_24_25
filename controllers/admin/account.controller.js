@@ -6,9 +6,17 @@ const systemConfig = require("../../config/system");
 const moment = require("moment");
 
 //[GET]/admin/accounts
-module.exports.index= (req,res) =>{
+module.exports.index= async(req,res) =>{
+  const roles = await Role.find({
+    deleted: false
+  }).select("title");
+  const accounts = await Account.find({
+    deleted: false
+  });
   res.render("admin/pages/accounts/index",{
-    pageTitle:" Admin Profile"
+    pageTitle:" Danh sách tài khoản",
+    roles: roles,
+    accounts: accounts
   });
 }
 

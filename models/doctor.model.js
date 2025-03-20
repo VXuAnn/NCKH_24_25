@@ -11,7 +11,6 @@ const doctorSchema = new mongoose.Schema({
   degree: String,
   birthday: Date,
   qualification: String,
-  role_id: String,
   status: {
     type: String,
     default: "active"
@@ -20,13 +19,9 @@ const doctorSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  specialization: {
-    type: String,
-    required: true
-  },
-  workPlace: {
-    type: String,
-    required: true
+  facility_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Facility", // Liên kết với bảng `Facility`
   },
   licenseNumber: {
     type: String,
@@ -39,7 +34,7 @@ const doctorSchema = new mongoose.Schema({
   },
   appointments: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Appointment" // Liên kết với lịch hẹn của bác sĩ
+    ref: "Appointment" 
   }]
 }, { timestamps: true });
 

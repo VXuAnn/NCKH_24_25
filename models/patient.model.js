@@ -8,11 +8,7 @@ const patientSchema = new mongoose.Schema({
   tokenUser: String,
   avatar: String,
   address: String,
-  role_id: {
-  type: mongoose.Schema.Types.ObjectId,
-  default: new mongoose.Types.ObjectId("67be7c9139a8acc166079989") // Gán mặc định role_id là Patient
-  },
-  dob: {
+  dateOfBirth: {
     type: Date, // Ngày sinh
     required: true
   },
@@ -20,10 +16,6 @@ const patientSchema = new mongoose.Schema({
     type: String, // Giới tính
     enum: ["male", "female"],
     required: true
-  },
-  statusOnline: {
-    type: String,
-    default: "online"
   },
   status: {
     type: String,
@@ -39,6 +31,6 @@ const patientSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-const Patient = mongoose.model("Patient", patientSchema, "patients");
+const Patient = mongoose.model("Patient", patientSchema, "users");
 
 module.exports = Patient;

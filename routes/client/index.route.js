@@ -10,5 +10,6 @@ module.exports.index = (app) => {
 
   app.use("/user", userRoute);
 
+
 }
 

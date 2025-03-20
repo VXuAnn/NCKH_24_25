@@ -1,19 +1,19 @@
 const Doctor=require("../../models/doctor.model");
 const systemConfig= require("../../config/system");
-const Role = require("../../models/role.model");
+const Facility = require("../../models/facility.model");
 const Degree = require("../../models/degree.model");
-const Department = require("../../models/department.model");
 const md5 = require('md5');
 const moment = require('moment');
 const generateHelper = require("../../helpers/generate.helper");
+const upload = require("../../middlewares/admin/upload.middleware");
 // [GET] /admin/profile
 module.exports.index = async (req, res) => {
-  const doctors =await Doctor.find({
-    deleted:false
-  })
+  const doctors =await Doctor.find({deleted:false})
+    .populate("facility_id", "name") 
+    .exec();
     res.render("admin/pages/doctor/index", {
       pageTitle: "List doctor",
-      doctors: doctors
+      doctors: doctors,
     });
   }
 
@@ -22,11 +22,10 @@ module.exports.profile = async (req,res) =>{
   try{
     const id = req.params.id;
     
-    const doctor = await Doctor.findOne({
-      _id:id,
-      deleted:false
-    });
-    console.log(doctor)
+    const doctor = await Doctor.findOne({_id:id, deleted:false})
+      .populate("facility_id", "name")
+      .exec();
+    // console.log(doctor)
     if(doctor) {
       res.render("admin/pages/doctor/profile",{
         pageTitle: "Doctor profile",
@@ -57,32 +56,32 @@ module.exports.deleteDoctor = async(req,res) =>{
   code: 200
 });
 }
-
 // [Get]//admin/doctor/add
 module.exports.add = async(req, res) => {
-  const roles =await Role.find({
-    deleted:false
-  }).select("title");
   const degrees = await Degree.find({
     deleted: false
   }).select("title");
-  const departments = await Department.find({
-    deleted: false
-  }).select("title");
+  const facilities = await Facility.find({
+    // deleted: false
+  }).select("name");
+
   res.render("admin/pages/doctor/add", {
     pageTitle:" Tạo tài khoản bác sĩ",
-    roles: roles,
-    departments: departments,
+    facilities: facilities,
     degrees: degrees
   })
 }
 module.exports.addPost = async (req, res) => {
+  // upload.single("avatar")(req, res, async function (err) {
+  //   if (err) {
+  //     return res.status(500).send("Lỗi upload file.");
+  //   }
   try {
     
-    const { fullName, us, email, ps, comfirm, birthday, role, gender, status, address, workPlace, qualification, spec, phone,degree } = req.body;
-
+    const { fullName, us, email, ps, comfirm, birthday, gender, status, address,  spec, phone,degree } = req.body;
+    const facility_id = req.body.facility;
     // Kiểm tra các trường bắt buộc
-    if (!fullName || !email || !ps || !comfirm || !birthday || !role || !gender || !spec || !qualification || !workPlace || !phone || !degree) {
+    if (!fullName || !email || !ps || !comfirm || !birthday || !gender || !spec || !facility_id || !phone || !degree) {
       return res.status(400).send("Vui lòng điền đầy đủ thông tin.");
     }
 
@@ -102,7 +101,6 @@ module.exports.addPost = async (req, res) => {
 
     // Chuyển đổi giá trị `gender` từ radio button
     const genderBoolean = gender === "male" ? true : false;
-
     // Chuyển đổi giá trị `status`
     const statusValue = status === "option1" ? "active" : "inactive";
     const parsedBirthday = moment(birthday, ["YYYY-MM-DD", "DD/MM/YYYY"], true).toDate();
@@ -111,23 +109,22 @@ module.exports.addPost = async (req, res) => {
     }
     const licenseNumber = req.body.licenseNumber || `DOC-${Date.now()}`;
 
-    console.log(req.body);
+    // console.log(req.body);
     // Tạo đối tượng bác sĩ mới
     const doctor = new Doctor({
       fullName,
       email,
       password: hashedPassword,
       birthday: moment(birthday, "YYYY-MM-DD").toDate(),
-      role_id: role,
       gender: genderBoolean,
       status: statusValue,
       address,
-      workPlace,
-      qualification,
+      facility_id,
       specialization: spec,
       phone,
       degree,
-      licenseNumber 
+      licenseNumber,
+      // avatar: avatarPath
     });
 
     // Lưu vào database
@@ -155,15 +152,13 @@ module.exports.edit = async (req, res) => {
     if (!doctor) {
       return res.status(404).json({ error: "Không tìm thấy bác sĩ" });
     }
-
-    const roles = await Role.find({ deleted: false }).select("title");
+    const facilities = await Facility.find({  }).select("name");
     const degrees = await Degree.find({ deleted: false }).select("title");
-    const departments = await Department.find({ deleted: false }).select("title");
-
-    return res.render("admin/pages/doctor/add", {
+    console.log(doctor);
+    return res.render("admin/pages/doctor/edit", {
       pageTitle: "Tạo tài khoản bác sĩ",
-      roles: roles,
-      departments: departments,
+      doctor: doctor, 
+      facilities: facilities,
       degrees: degrees,
     });
   } catch (error) {
@@ -172,22 +167,51 @@ module.exports.edit = async (req, res) => {
   }
 };
 
+module.exports.editPatch = async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (req.body.gender) {
+      req.body.gender = req.body.gender === "male"; // true for "male", false for "female"
+    }
+    // Nếu password không được gửi lên, xóa nó khỏi req.body
+    if (!req.body.password || req.body.password.trim() === "") {
+      delete req.body.password;
+    } else {
+      req.body.password = md5(req.body.password); // Cần lấy đúng giá trị password từ req.body
+    }
 
-//[Patch]/admin/doctor/edot/:id
-module.exports.editPatch = async(req, res) =>{
-  const od =req.params.id;
+    await Doctor.updateOne(
+      {
+        _id: id,
+        deleted: false,
+      },
+      req.body
+    );
 
-  if(req.body.password == ""){
-    delete req.body.password == "";
-  }else {
-    req.body.password = md5(req.password);
+    req.flash("success", "Cập nhật thành công");
+    res.redirect("back");
+  } catch (error) {
+    console.error("Lỗi khi cập nhật bác sĩ:", error);
+    res.status(500).json({ error: "Lỗi server" });
   }
-  await Doctor.updateOne({
-    _id:id,
-    deleted: false
-  },req.body);
-  
-  req.flash("success", "Cập nhật thành công");
+};
 
-  res.redirect("back");
-}
+// //[Patch]/admin/doctor/edit/:id
+// module.exports.editPatch = async(req, res) =>{
+//   console.log("🔹 Dữ liệu nhận được:", req.body); 
+//   const id =req.params.id;
+
+//   if(req.body.password == ""){
+//     delete req.body.password == "";
+//   }else {
+//     req.body.password = md5(req.password);
+//   }
+//   await Doctor.updateOne({
+//     _id:id,
+//     deleted: false
+//   },req.body);
+  
+//   req.flash("success", "Cập nhật thành công");
+
+//   res.redirect("back");
+// }

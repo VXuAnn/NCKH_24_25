@@ -11,11 +11,13 @@ block main
         .col-sm-6.col-md-3
           .form-group.form-focus
             label.focus-label Patient Name
-            +search(keyword)
+            input.form-control.floating#search-patient(type='text' autocomplete='off')
+            .search-results#patient-results
         .col-sm-6.col-md-3
           .form-group.form-focus
             label.focus-label Medicine Name
-            input.form-control.floating(type='text')
+            input.form-control.floating#search-medicine(type='text' autocomplete='off')
+            .search-results#medicine-results
         .col-sm-6.col-md-3
           .form-group.form-focus.select-focus
             label.focus-label Type
@@ -23,14 +25,15 @@ block main
               each type in typemedicines 
                 option(value=type.title) #{type.title}
         .col-sm-6.col-md-3
-          a.btn.btn-success.btn-block(href='#')  Search 
+          a.btn.btn-success.btn-block(href='#')  Tạo đơn thuốc 
       .row
         .col-md-12
           .table-responsive
-            table.table.table-striped.custom-table
+            table.table.table-striped.custom-table#prescription-table
               thead
                 tr
                   th Position
+                  th Patient Name
                   th Medicine Name
                   th Type
                   th Quantity
@@ -64,13 +67,13 @@ block main
               a.btn.btn-white(href='#' data-dismiss='modal') Close
               button.btn.btn-danger(type='submit') Delete
   .sidebar-overlay(data-reff='')
-  script(src='assets/js/jquery-3.2.1.min.js')
-  script(src='assets/js/popper.min.js')
-  script(src='assets/js/bootstrap.min.js')
-  script(src='assets/js/jquery.dataTables.min.js')
-  script(src='assets/js/dataTables.bootstrap4.min.js')
-  script(src='assets/js/jquery.slimscroll.js')
-  script(src='assets/js/select2.min.js')
-  script(src='assets/js/moment.min.js')
-  script(src='assets/js/bootstrap-datetimepicker.min.js')
-  script(src='assets/js/app.js')
+  script(src='/assets/js/jquery-3.2.1.min.js')
+  script(src='/assets/js/popper.min.js')
+  script(src='/assets/js/bootstrap.min.js')
+  script(src='/assets/js/jquery.dataTables.min.js')
+  script(src='/assets/js/dataTables.bootstrap4.min.js')
+  script(src='/assets/js/jquery.slimscroll.js')
+  script(src='/assets/js/select2.min.js')
+  script(src='/assets/js/moment.min.js')
+  script(src='/assets/js/bootstrap-datetimepicker.min.js')
+  script(src='/assets/js/app.js')

@@ -1,103 +1,44 @@
 extends ../../layouts/default.pug
 block main
   .main-wrapper
-    
     .page-wrapper
       .content
         .row
-          .col-sm-8.col-4
-            h4.page-title Blog
+          .col-sm-4.col-3
+            h4.page-title News
+          .col-sm-8.col-9.text-right.m-b-20
+            a.btn.btn-primary.btn-rounded.float-right(href=`/${prefixAdmin}/blog/add`)
+              i.fa.fa-plus
+              |  Add New
         .row
-          .col-sm-6.col-md-6.col-lg-4
-            .blog.grid-blog
-              .blog-image
-                a(href='blog-details.html')
-                  img.img-fluid(src='https://www.vinmec.com/static/uploads/small_20181210_080759_413285_Vinmec_2_max_1800x1800_jpg_be76fa256f.jpg' alt='')
-              .blog-content
-                h3.blog-title
-                  a(href='blog-details.html') Skinalyze nhận bằng khen của Bộ Y tế vì đóng góp tích cực cho cộng đồng
-                p
-                  | Hệ thống Y tế Vinmec đã phối hợp chặt chẽ với Quỹ Hỗ trợ Bệnh nhân Ung thư - Ngày mai tươi sáng và Bệnh viện K (Bộ Y tế) tổ chức chương trình miễn phí “Sàng lọc và phát hiện sớm một số bệnh ung thư” từ ngày 9/9 tới 18/10/2017, nhằm nâng cao nhận thức của cộng đồng về phòng và phát hiện sớm bệnh ung thư; tạo thói quen chủ động tầm soát định kỳ phát hiện sớm ung thư.Trong suốt thời gian diễn ra chương trình, Hệ thống Y tế Vinmec cùng Quỹ Hỗ trợ bệnh nhân ung thư – Ngày mai tươi sáng và Bệnh viện K đã hợp tác chặt chẽ với cán bộ y tế tại tất cả 18 điểm khám, đảm bảo toàn diện công tác tiếp đón, hỗ trợ hướng dẫn và sàng lọc cho người dân. 3 bệnh viện thuộc Hệ thống Y tế Vinmec (Bệnh viện Đa khoa Quốc tế Vinmec Times City, Vinmec Hạ Long, Vinmec Central Park) đã tích cực trực tiếp tham gia thăm khám, sàng lọc, tư vấn miễn phí, nhận được sự đánh giá cao của cộng đồng xã hội.
-                a.read-more(href='blog-details.html')
-                  i.fa.fa-long-arrow-right
-                  |  Read More
-                .blog-info.clearfix
-                  .post-left
-                    ul
-                      li
-                        a(href='#.')
-                          i.fa.fa-calendar
-                          span December 6, 2017
-                  .post-right
-                    a(href='#.')
-                      i.fa.fa-heart-o
-                      | 21
-                    a(href='#.')
-                      i.fa.fa-eye
-                      | 8
-                    a(href='#.')
-                      i.fa.fa-comment-o
-                      | 17
-          .col-sm-6.col-md-6.col-lg-4
-            .blog.grid-blog
-              .blog-image
-                a(href='blog-details.html')
-                  img.img-fluid(src='/assets/img/blog/blog-02.jpg' alt='')
-              .blog-content
-                h3.blog-title
-                  a(href='blog-details.html') Skinalyze đạt giải thưởng “Bệnh viện Việt Nam tiến bộ nhất” của hiệp hội Quản lý Bệnh viện châu Á
-                p
-                  | Danh sách 100 nhà khoa học tiêu biểu của châu Á vừa được Tạp chí khoa học Asian Scientist công bố có tên hai nhà khoa học của Việt Nam gồm GS Nguyễn Thanh Liêm (Viện nghiên cứu Tế bào gốc và Công nghệ gene Vinmec) và TS Nguyễn Thị Hiệp (Trường Đại học Quốc tế, Đại học Quốc gia TPHCM). Người được công nhận trong danh sách này phải có giải thưởng quốc gia hoặc quốc tế vào năm 2018 cho nghiên cứu khoa học quan trọng hoặc lãnh đạo trong học viện, ngành công nghiệp.
-                a.read-more(href='blog-details.html')
-                  i.fa.fa-long-arrow-right
-                  |  Read More
-                .blog-info.clearfix
-                  .post-left
-                    ul
-                      li
-                        a(href='#.')
-                          i.fa.fa-calendar
-                          span December 6, 2017
-                  .post-right
-                    a(href='#.')
-                      i.fa.fa-heart-o
-                      | 21
-                    a(href='#.')
-                      i.fa.fa-eye
-                      | 8
-                    a(href='#.')
-                      i.fa.fa-comment-o
-                      | 17
-          .col-sm-6.col-md-6.col-lg-4
-            .blog.grid-blog
-              .blog-image
-                a(href='blog-details.html')
-                  img.img-fluid(src='https://www.vinmec.com/static/uploads/small_20190722_023331_667011_gs_nguyen_thanh_lie_max_1800x1800_jpg_bdda00d2fe.jpg' alt='')
-              .blog-content
-                h3.blog-title
-                  a(href='blog-details.html') GS Nguyễn Thanh Liêm được vinh danh là 1 trong 100 nhà khoa học tiêu biểu châu Á 2019
-                p
-                  | GS Nguyễn Thanh Liêm được ghi nhận với nhiều thành tích, từng là bác sĩ ghép tế bào gốc chữa bệnh bại não và tự kỷ đầu tiên ở Việt Nam; trực tiếp phẫu thuật 5 ca song sinh dính liền thuộc loại khó hơn 15 năm trước. Ông cũng có gần 100 công trình khoa học trên các tạp chí quốc tế ở Mỹ và châu Âu. Mới đây nhất là công bố nghiên cứu về giải trình tự gene người Việt. GS Nguyễn Thanh Liêm từng được trao giải thưởng Nikkei châu Á cho khoa học và công nghệ.
-                a.read-more(href='blog-details.html')
-                  i.fa.fa-long-arrow-right
-                  |  Read More
-                .blog-info.clearfix
-                  .post-left
-                    ul
-                      li
-                        a(href='#.')
-                          i.fa.fa-calendar
-                          span December 6, 2017
-                  .post-right
-                    a(href='#.')
-                      i.fa.fa-heart-o
-                      | 21
-                    a(href='#.')
-                      i.fa.fa-eye
-                      | 8
-                    a(href='#.')
-                      i.fa.fa-comment-o
-                      | 107
+          each article in news
+            .col-sm-6.col-md-6.col-lg-4
+              .blog.grid-blog
+                .blog-image
+                  a(href=`/blog-details/${article._id}`)
+                    img.img-fluid(src=article.imageUrl alt=article.title)
+                .blog-content
+                  h3.blog-title
+                    a(href=`/blog-details/${article._id}`) #{article.title}
+                  p #{article.desc.length > 150 ? article.desc.substring(0, 150) + "..." : article.desc}
+                  a.read-more(href=`/blog-details/${article._id}`)
+                    i.fa.fa-long-arrow-right
+                    |  Read More
+                  .blog-info.clearfix
+                    .post-left
+                      ul
+                        li
+                          a(href='#.')
+                            i.fa.fa-calendar
+                            span= new Date(article.createdAt).toLocaleDateString("vi-VN")
+                    .post-right
+                      a.btn.btn-success(href=`/${prefixAdmin}/blog/edit/${article._id}`)
+                        i.fa.fa-pencil
+                        |  Sửa
+                      a.btn.btn-danger(href=`/${prefixAdmin}/doctor/delete${article._id}` onclick="return confirm('Bạn có chắc chắn muốn xóa?');")
+                        i.fa.fa-trash
+                        |  Xóa
+
   .sidebar-overlay(data-reff='')
   script(src='/assets/js/jquery-3.2.1.min.js')
   script(src='/assets/js/popper.min.js')

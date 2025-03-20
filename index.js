@@ -3,6 +3,7 @@ require('dotenv').config();
 const path = require('path');
 const database = require("./config/database");
 const bodyParser = require("body-parser");
+const methodOverride = require('method-override');
 database.connect();
 
 const routeAdmin = require("./routes/admin/index.route");
@@ -25,7 +26,7 @@ app.set("views", path.join(__dirname, "views")); // Cấu hình đường dẫn 
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(methodOverride('_method'));
 // Flash
 app.use(cookieParser('HHKALKS'));
 app.use(session({ cookie: { maxAge: 60000 }}));
