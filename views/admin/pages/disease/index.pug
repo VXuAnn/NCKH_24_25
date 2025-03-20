@@ -35,10 +35,18 @@ block main
                   each disease in diseases
                     tr
                       td= disease.name
-                      td= disease.label
-                      td= disease.desc
+                      //- td= disease.label
+                      //- td= disease.desc
+                      td 
+                        span.truncate(data-full=disease.label)= disease.label.length > 30 ? disease.label.substring(0, 30) + '...' : disease.label
+                        if disease.label.length > 30
+                          a.text-primary.toggle-text(href='#') Xem thêm
+                      td 
+                        span.truncate(data-full=disease.desc)= disease.desc.length > 50 ? disease.desc.substring(0, 50) + '...' : disease.desc
+                        if disease.desc.length > 50
+                          a.text-primary.toggle-text(href='#') Xem thêm
                       td.text-right
-                        a.btn.btn-primary.btn-sm(href=`/${prefixAdmin}/disease/edit/${disease._id}`)
+                        a.btn.btn-primary.btn-sm.mr-2(href=`/${prefixAdmin}/disease/edit/${disease._id}`)
                           i.fa.fa-pencil
                           |  Edit
                         button.btn.btn-danger.btn-sm(data-toggle='modal' data-target='#delete_employee' data-id=disease._id)
@@ -64,3 +72,23 @@ block main
   script(src='~/assets/js/moment.min.js')
   script(src='~/assets/js/bootstrap-datetimepicker.min.js')
   script(src='~/assets/js/app.js')
+  script.
+    $(document).ready(function () {
+      $(".toggle-text").click(function (e) {
+        e.preventDefault();
+        let span = $(this).prev(".truncate");
+        let fullText = span.attr("data-full");
+        let isExpanded = span.hasClass("expanded");
+
+        if (isExpanded) {
+          let shortText = fullText.length > 30 ? fullText.substring(0, 30) + "..." : fullText;
+          span.text(shortText);
+          $(this).text("Xem thêm");
+        } else {
+          span.text(fullText);
+          $(this).text("Thu gọn");
+        }
+
+        span.toggleClass("expanded");
+      });
+    });

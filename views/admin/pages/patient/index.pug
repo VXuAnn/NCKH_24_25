@@ -17,7 +17,7 @@ block main
                     th Address
                     th Phone
                     th Email
-                    th.text-right Action
+                    //- th.text-right Action
                 tbody
                   each patient in patients
                     tr
@@ -28,13 +28,13 @@ block main
                       td #{patient.address}
                       td #{patient.phone}
                       td #{patient.email}
-                      td.text-right
-                        a.btn.btn-sm.btn-primary.m-r-5(href=`/admin/patient/edit/${patient._id}`)
-                          i.fa.fa-pencil.m-r-5
-                          | Edit
-                        button.btn.btn-sm.btn-danger(data-toggle='modal' data-target='#delete_patient' data-id=`#{patient._id}`)
-                          i.fa.fa-trash-o.m-r-5
-                          | Delete
+                      //- td.text-right
+                      //-   a.btn.btn-sm.btn-primary.m-r-5(href=`/admin/patient/edit/${patient._id}`)
+                      //-     i.fa.fa-pencil.m-r-5
+                      //-     | Edit
+                      //-   button.btn.btn-sm.btn-danger(data-toggle='modal' data-target='#delete_patient' data-id=`#{patient._id}`)
+                      //-     i.fa.fa-trash-o.m-r-5
+                      //-     | Delete
 
                 
     #delete_patient.modal.fade.delete-modal(role='dialog')

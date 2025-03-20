@@ -41,30 +41,7 @@ block main
                 span.widget-title4
                   | Pending 
                   i.fa.fa-check(aria-hidden='true')
-        .row
-          .col-12.col-md-6.col-lg-6.col-xl-6
-            .card
-              .card-body
-                .chart-title
-                  h4 Patient Total
-                  span.float-right
-                    i.fa.fa-caret-up(aria-hidden='true')
-                    |  15% Higher than Last Month
-                canvas#linegraph
-          .col-12.col-md-6.col-lg-6.col-xl-6
-            .card
-              .card-body
-                .chart-title
-                  h4 Patients In
-                  .float-right
-                    ul.chat-user-total
-                      li
-                        i.fa.fa-circle.current-users(aria-hidden='true')
-                        | ICU
-                      li
-                        i.fa.fa-circle.old-users(aria-hidden='true')
-                        |  OPD
-                canvas#bargraph
+        
         .row
           .col-12.col-md-6.col-lg-8.col-xl-8
             .card
@@ -149,63 +126,63 @@ block main
                             span.contact-date= doctor.facility
               .card-footer.text-center.bg-white
                 a.text-muted(href='/admin/doctor') View all Doctors
-        .row
-          .col-12.col-md-6.col-lg-8.col-xl-8
-            .card
-              .card-header
-                h4.card-title.d-inline-block New Patients 
-                a.btn.btn-primary.float-right(href='/admin/patient') View all
-              .card-block
-                .table-responsive
-                  table.table.mb-0.new-patient-table
-                    tbody
-                      each patient in patients
-                        tr
-                          td
-                            img.rounded-circle(width='28' height='28' src=patient.avatar )
-                            h2= patient.fullName
-                          td= patient.email
-                          td= patient.phone
-                          td
-                            button.btn.btn-primary.btn-primary-one.float-right= patient.status
+        //- .row
+        //-   .col-12.col-md-6.col-lg-8.col-xl-8
+        //-     .card
+        //-       .card-header
+        //-         h4.card-title.d-inline-block New Patients 
+        //-         a.btn.btn-primary.float-right(href='/admin/patient') View all
+        //-       .card-block
+        //-         .table-responsive
+        //-           table.table.mb-0.new-patient-table
+        //-             tbody
+        //-               each patient in patients
+        //-                 tr
+        //-                   td
+        //-                     img.rounded-circle(width='28' height='28' src=patient.avatar )
+        //-                     h2= patient.fullName
+        //-                   td= patient.email
+        //-                   td= patient.phone
+        //-                   td
+        //-                     button.btn.btn-primary.btn-primary-one.float-right= patient.status
                       
-          .col-12.col-md-6.col-lg-4.col-xl-4
-            .hospital-barchart
-              h4.card-title.d-inline-block Hospital Management
-            .bar-chart
-              .legend
-                .item
-                  h4 Level1
-                .item
-                  h4 Level2
-                .item.text-right
-                  h4 Level3
-                .item.text-right
-                  h4 Level4
-              .chart.clearfix
-                .item
-                  .bar
-                    span.percent 16%
-                    .item-progress(data-percent='16')
-                      span.title OPD Patient
-                .item
-                  .bar
-                    span.percent 71%
-                    .item-progress(data-percent='71')
-                      span.title New Patient
-                .item
-                  .bar
-                    span.percent 82%
-                    .item-progress(data-percent='82')
-                      span.title Laboratory Test
-                .item
-                  .bar
-                    span.percent 67%
-                    .item-progress(data-percent='67')
-                      span.title Treatment
-                .item
-                  .bar
-                    span.percent 30%
-                    .item-progress(data-percent='30')
-                      span.title Discharge
+          //- .col-12.col-md-6.col-lg-4.col-xl-4
+          //-   .hospital-barchart
+          //-     h4.card-title.d-inline-block Hospital Management
+          //-   .bar-chart
+          //-     .legend
+          //-       .item
+          //-         h4 Level1
+          //-       .item
+          //-         h4 Level2
+          //-       .item.text-right
+          //-         h4 Level3
+          //-       .item.text-right
+          //-         h4 Level4
+          //-     .chart.clearfix
+          //-       .item
+          //-         .bar
+          //-           span.percent 16%
+          //-           .item-progress(data-percent='16')
+          //-             span.title OPD Patient
+          //-       .item
+          //-         .bar
+          //-           span.percent 71%
+          //-           .item-progress(data-percent='71')
+          //-             span.title New Patient
+          //-       .item
+          //-         .bar
+          //-           span.percent 82%
+          //-           .item-progress(data-percent='82')
+          //-             span.title Laboratory Test
+          //-       .item
+          //-         .bar
+          //-           span.percent 67%
+          //-           .item-progress(data-percent='67')
+          //-             span.title Treatment
+          //-       .item
+          //-         .bar
+          //-           span.percent 30%
+          //-           .item-progress(data-percent='30')
+          //-             span.title Discharge
   .sidebar-overlay(data-reff='')

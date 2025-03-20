@@ -68,3 +68,16 @@
               a(href=`/${prefixAdmin}/setting`)
                 i.fa.fa-cog
                 span Settings
+script.
+  document.addEventListener("DOMContentLoaded", function () {
+      let menuItems = document.querySelectorAll("#sidebar-menu ul li a");
+      let currentPath = window.location.pathname;
+
+      menuItems.forEach((item) => {
+          if (item.getAttribute("href") === currentPath) {
+              item.parentElement.classList.add("active");
+          } else {
+              item.parentElement.classList.remove("active");
+          }
+      });
+  });
