@@ -41,7 +41,7 @@ block main
                 //-   id="desc"
                 //-   name="description"
                 //- )
-                textarea.form-control(id="desc" name="description" rows="5" textarea-mce)
+                textarea.form-control.textarea-mce#desc(name="description" rows="5")
                 .text-center.m-t-20
                   button.btn.btn-primary.submit-btn(type="submit") Create Disease
   .sidebar-overlay(data-reff='')
@@ -52,4 +52,3 @@ block main
   script(src='/assets/js/select2.min.js')
   script(src='/assets/js/tagsinput.js')
   script(src='/assets/js/app.js')
-  script(src='https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js' referrerpolicy="origin")
