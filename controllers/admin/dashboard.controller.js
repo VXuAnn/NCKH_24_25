@@ -14,7 +14,6 @@ module.exports.index = async(req, res) => {
   const doctorCount = await Doctor.countDocuments({ deleted: false });
   const patientCount = await Patient.countDocuments({ });
   const appointmentCount = await Appointment.countDocuments({ });
-  console.log(appointments, patientCount, doctorCount, appointmentCount);
   res.render("admin/pages/dashboard/index", {
     pageTitle: "Trang tổng quan",
     doctors: doctors,

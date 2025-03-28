@@ -21,7 +21,7 @@ router.post(
 
 router.get("/schedule", controller.schedule);
 
-router.delete("/delete/:id",controller.deleteDoctor);
+router.patch("/delete/:id",controller.deleteDoctor);
 
 router.get("/edit/:id",controller.edit);
 router.patch(

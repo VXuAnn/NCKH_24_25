@@ -1,0 +1,412 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="Page-1" id="WBLOrvQenLwCGgacNrVQ">
+    <mxGraphModel dx="1050" dy="5069" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="300" y="160" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-2" value="Bệnh nhân" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="350" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-3" value="Xem bài viết&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="350" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-4" value="Đăng nhập&lt;div&gt;(Bệnh nhân)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="230" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-5" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="240" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-6" value="Xem chi tiết bài viết" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="350" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-16" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="82Y49fBNWHWlY2HNPzQW-2" target="82Y49fBNWHWlY2HNPzQW-3" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="340" y="350" as="sourcePoint" />
+            <mxPoint x="500" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-17" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="82Y49fBNWHWlY2HNPzQW-6" target="82Y49fBNWHWlY2HNPzQW-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="350" as="sourcePoint" />
+            <mxPoint x="380" y="350" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-18" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="82Y49fBNWHWlY2HNPzQW-3" target="82Y49fBNWHWlY2HNPzQW-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="540" y="390" as="sourcePoint" />
+            <mxPoint x="480" y="390" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="82Y49fBNWHWlY2HNPzQW-19" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="82Y49fBNWHWlY2HNPzQW-4" target="82Y49fBNWHWlY2HNPzQW-5" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="225" y="390" as="sourcePoint" />
+            <mxPoint x="340" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="276" y="-448" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-2" value="Bệnh nhân" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="176" y="-258" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-3" value="Đặt lịch hẹn" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="306" y="-258" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-4" value="Đăng nhập&lt;div&gt;(Bệnh nhân)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="326" y="-378" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-5" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="506" y="-368" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-6" value="Xem lịch hẹn" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="506" y="-258" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-7" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-2" target="k4wcHOBwXmWPaRk3RHpn-3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="316" y="-258" as="sourcePoint" />
+            <mxPoint x="476" y="-258" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-8" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-6" target="k4wcHOBwXmWPaRk3RHpn-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="436" y="-258" as="sourcePoint" />
+            <mxPoint x="356" y="-258" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-9" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-3" target="k4wcHOBwXmWPaRk3RHpn-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="516" y="-218" as="sourcePoint" />
+            <mxPoint x="456" y="-218" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-10" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-4" target="k4wcHOBwXmWPaRk3RHpn-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="201" y="-218" as="sourcePoint" />
+            <mxPoint x="316" y="-218" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-11" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="260" y="-988" width="360" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-12" value="Bệnh nhân" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="-798" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-13" value="Quét ảnh da liễu" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="-798" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-14" value="Đăng nhập&lt;div&gt;(Bệnh nhân)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="-918" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-15" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="-908" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-16" value="Xem kết quả" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="-798" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-17" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-12" target="k4wcHOBwXmWPaRk3RHpn-13">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="-798" as="sourcePoint" />
+            <mxPoint x="460" y="-798" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-18" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-16" target="k4wcHOBwXmWPaRk3RHpn-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="-798" as="sourcePoint" />
+            <mxPoint x="340" y="-798" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-19" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-13" target="k4wcHOBwXmWPaRk3RHpn-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="-758" as="sourcePoint" />
+            <mxPoint x="440" y="-758" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-20" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-14" target="k4wcHOBwXmWPaRk3RHpn-15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="185" y="-758" as="sourcePoint" />
+            <mxPoint x="300" y="-758" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-21" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="246" y="-1560" width="388" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-22" value="Quản trị viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="-1378" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-23" value="Quản trị bài viết" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="-1378" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-25" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="-1478" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-26" value="Xóa bài viết" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="-1378" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-27" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-22" target="k4wcHOBwXmWPaRk3RHpn-23">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="300" y="-1378" as="sourcePoint" />
+            <mxPoint x="460" y="-1378" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-28" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-26" target="k4wcHOBwXmWPaRk3RHpn-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="-1378" as="sourcePoint" />
+            <mxPoint x="340" y="-1378" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-29" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="-1338" as="sourcePoint" />
+            <mxPoint x="360" y="-1438" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-31" value="Thêm bài viết" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="-1267" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-32" value="Chỉnh sửa bài viết" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="-1267" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-33" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.408;exitY=0.037;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-31" target="k4wcHOBwXmWPaRk3RHpn-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="-1338" as="sourcePoint" />
+            <mxPoint x="440" y="-1338" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-34" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-32" target="k4wcHOBwXmWPaRk3RHpn-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="-1328" as="sourcePoint" />
+            <mxPoint x="450" y="-1328" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-35" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="225" y="-2135" width="363" height="363" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-36" value="Quản trị viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="139" y="-1953" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-37" value="Quản lý lịch hẹn" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="269" y="-1953" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-38" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="289" y="-2053" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-39" value="Xem lịch hẹn" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="469" y="-1953" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-40" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-36" target="k4wcHOBwXmWPaRk3RHpn-37">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="279" y="-1953" as="sourcePoint" />
+            <mxPoint x="439" y="-1953" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-41" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-39" target="k4wcHOBwXmWPaRk3RHpn-37">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="399" y="-1953" as="sourcePoint" />
+            <mxPoint x="319" y="-1953" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-42" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-37">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="479" y="-1913" as="sourcePoint" />
+            <mxPoint x="339" y="-2013" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-47" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="232" y="-2676" width="388" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-48" value="Quản trị viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="146" y="-2494" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-49" value="Quản lý bệnh" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="276" y="-2494" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-50" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="296" y="-2594" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-51" value="Xem danh sách bệnh" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="476" y="-2494" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-52" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-48" target="k4wcHOBwXmWPaRk3RHpn-49">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="286" y="-2494" as="sourcePoint" />
+            <mxPoint x="446" y="-2494" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-53" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-51" target="k4wcHOBwXmWPaRk3RHpn-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="406" y="-2494" as="sourcePoint" />
+            <mxPoint x="326" y="-2494" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-54" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="486" y="-2454" as="sourcePoint" />
+            <mxPoint x="346" y="-2554" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-55" value="Xóa bệnh" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="256" y="-2383" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-56" value="Chỉnh sửa bệnh" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="476" y="-2383" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-57" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.408;exitY=0.037;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-55" target="k4wcHOBwXmWPaRk3RHpn-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="486" y="-2454" as="sourcePoint" />
+            <mxPoint x="426" y="-2454" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-58" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-56" target="k4wcHOBwXmWPaRk3RHpn-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="496" y="-2444" as="sourcePoint" />
+            <mxPoint x="436" y="-2444" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-59" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="228" y="-3160" width="356" height="356" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-60" value="Quản trị viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="142" y="-2978" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-61" value="Quản lý bệnh nhân" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="272" y="-2978" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-62" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="292" y="-3078" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-63" value="Xem danh sách bệnh nhân" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="472" y="-2978" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-64" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-60" target="k4wcHOBwXmWPaRk3RHpn-61">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="282" y="-2978" as="sourcePoint" />
+            <mxPoint x="442" y="-2978" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-65" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-63" target="k4wcHOBwXmWPaRk3RHpn-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="402" y="-2978" as="sourcePoint" />
+            <mxPoint x="322" y="-2978" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-66" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="482" y="-2938" as="sourcePoint" />
+            <mxPoint x="342" y="-3038" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-71" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="242" y="-3745" width="388" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-72" value="Quản trị viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="156" y="-3563" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-73" value="Quản lý bác sĩ" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="286" y="-3563" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-74" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="306" y="-3663" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-75" value="Thêm bác sĩ" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="486" y="-3563" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-76" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-72" target="k4wcHOBwXmWPaRk3RHpn-73">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="296" y="-3563" as="sourcePoint" />
+            <mxPoint x="456" y="-3563" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-77" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-75" target="k4wcHOBwXmWPaRk3RHpn-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="416" y="-3563" as="sourcePoint" />
+            <mxPoint x="336" y="-3563" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-78" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="496" y="-3523" as="sourcePoint" />
+            <mxPoint x="356" y="-3623" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-79" value="Xóa bác sĩ" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="266" y="-3452" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-80" value="Chỉnh sửa bác sĩ&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="486" y="-3452" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-81" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.408;exitY=0.037;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-79" target="k4wcHOBwXmWPaRk3RHpn-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="496" y="-3523" as="sourcePoint" />
+            <mxPoint x="436" y="-3523" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-82" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-80" target="k4wcHOBwXmWPaRk3RHpn-73">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="506" y="-3513" as="sourcePoint" />
+            <mxPoint x="446" y="-3513" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-83" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="249" y="-4310" width="353" height="353" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-84" value="Quản trị viên" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="163" y="-4128" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-85" value="Thống kê" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="293" y="-4128" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-86" value="Đăng nhập&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="313" y="-4228" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-87" value="Xem dữ liệu thống kê" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="493" y="-4128" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-88" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-84" target="k4wcHOBwXmWPaRk3RHpn-85">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="303" y="-4128" as="sourcePoint" />
+            <mxPoint x="463" y="-4128" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-89" value="extends" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-87" target="k4wcHOBwXmWPaRk3RHpn-85">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="423" y="-4128" as="sourcePoint" />
+            <mxPoint x="343" y="-4128" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k4wcHOBwXmWPaRk3RHpn-90" value="include" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="k4wcHOBwXmWPaRk3RHpn-85">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="503" y="-4088" as="sourcePoint" />
+            <mxPoint x="363" y="-4188" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

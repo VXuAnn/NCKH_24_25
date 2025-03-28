@@ -15,19 +15,17 @@ module.exports.index = async(req, res) => {
 // [GET] /doctor/search-medicine
 module.exports.searchMedicine = async (req, res) => {
   const keyword = req.query.keyword || "";
-  console.log("🔍 Tìm kiếm thuốc với từ khóa:", keyword); // Log dữ liệu nhập vào
+  console.log("🔍 Tìm kiếm thuốc với từ khóa:", keyword); 
   if (!keyword) {
     patientResults.innerHTML = "";
     return;
   }
-
-
   try {
     const regex = new RegExp(keyword, "i");
     const medicines = await Medicine.find({ name: regex, deleted: false })
       .limit(10)
       .select("name type _id") || [];
-    console.log("📋 Kết quả tìm kiếm thuốc:", medicines); // Log kết quả tìm thấy
+    console.log("📋 Kết quả tìm kiếm thuốc:", medicines);
     res.json(medicines);
   } catch (error) {
     console.error("Lỗi tìm kiếm thuốc:", error);

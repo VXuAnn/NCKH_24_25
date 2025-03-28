@@ -23,8 +23,8 @@ module.exports.index = async (req, res) => {
       }
     });
 
-    // Log danh sách cuộc hẹn để kiểm tra dữ liệu
-    console.log("Danh sách cuộc hẹn:", JSON.stringify(appointments, null, 2));
+    // // Log danh sách cuộc hẹn để kiểm tra dữ liệu
+    // console.log("Danh sách cuộc hẹn:", JSON.stringify(appointments, null, 2));
 
     res.render("admin/pages/appointment/index", {
       pageTitle: "Thông tin cuộc hẹn",

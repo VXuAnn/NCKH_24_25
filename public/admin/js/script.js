@@ -78,7 +78,7 @@ document.addEventListener("click", (event) => {
   if (!id) return; // Nếu không có ID thì dừng
 
   fetch(`/admin/doctor/delete/${id}`, {
-    method: "DELETE"
+    method: "PA"
   })
     .then(res => res.json())
     .then(data => {
