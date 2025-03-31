@@ -1,24 +1,32 @@
-extends ../../layouts/auth.pug
-
-block main 
-  .main-wrapper.account-wrapper
-    .account-page
-      .account-center
-        .account-box
-          form.form-signin(action='http://dreamguys.co.in/preclinic/template/index.html')
-            .account-logo
-              a(href='index-2.html')
-                img(src='/assets/img/logo-dark.png' alt='')
-            .form-group
-              label Username or Email
-              input.form-control(type='text' autofocus='')
-            .form-group
-              label Password
-              input.form-control(type='password')
-            .form-group.text-right
-              a(href='forgot-password.html') Forgot your password?
-            .form-group.text-center
-              button.btn.btn-primary.account-btn(type='submit') Login
-            .text-center.register-link
-              | Don&rsquo;t have an account? 
-              a(href='register.html') Register Now
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Login Page
+    link(rel='stylesheet' type='text/css' href='/assets/css/bootstrap.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/font-awesome.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/select2.min.css')
+    link(rel='stylesheet' type='text/css' href='/assets/css/style.css')
+  body
+    block main
+      .main-wrapper.account-wrapper
+        .account-page
+          .account-center
+            .account-box
+              form.form-signin(action=`/${prefixAdmin}/auth/login` method="POST")
+                .account-logo
+                  a(href='index-2.html')
+                    img(src='/assets/img/logo-dark.png' alt='')
+                .form-group
+                  label Username or Email
+                  input.form-control(type='text' name='email' required)
+                .form-group
+                  label Password
+                  input.form-control(type='password' name='password' required)
+                .form-group.text-center
+                  button.btn.btn-primary.account-btn(type='submit') Login
+    script(src='/assets/js/jquery-3.2.1.min.js')
+    script(src='/assets/js/popper.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/app.js')

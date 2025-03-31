@@ -32,16 +32,10 @@ block main
                 //-   name="label"
                 //-   required
                 //- )
-                textarea.form-control(id="label" name="label" rows="5")
+                textarea.form-control(id="label" name="label" rows="5" textarea-mce)
                 label(for="desc")
                   |  Mô tả
-                //- input(
-                //-   type="text"
-                //-   class="form-control"
-                //-   id="desc"
-                //-   name="description"
-                //- )
-                textarea.form-control.textarea-mce#desc(name="description" rows="5")
+                textarea.form-control(id="desc" name="description" rows="5" textarea-mce)
                 .text-center.m-t-20
                   button.btn.btn-primary.submit-btn(type="submit") Create Disease
   .sidebar-overlay(data-reff='')

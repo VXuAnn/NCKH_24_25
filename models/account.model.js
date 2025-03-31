@@ -1,4 +1,3 @@
-const { status } = require("express/lib/response");
 const mongoose =require("mongoose");
 
 const accountSchema =new mongoose.Schema({
@@ -8,7 +7,6 @@ const accountSchema =new mongoose.Schema({
   password: String,
   token: String,
   avatar: String,
-  role_id: String,
   status: String,
   deleted:{
     type: Boolean,
