@@ -8,8 +8,14 @@ module.exports.index = async (req, res) => {
   try {
     const appointments = await Appointment.find({})
       .populate("user_id", "fullName dateOfBirth") 
-      .populate("doctor_id", "fullName") 
-      .populate("facility_id", "name")
+      .populate({
+        path: "doctor_id",
+        select: "fullName",
+        populate: {
+          path: "facility_id",
+          select: "name"
+        }
+      })
       .lean(); 
 
     // Tính tuổi bệnh nhân
@@ -21,10 +27,13 @@ module.exports.index = async (req, res) => {
       } else {
         appointment.age = "N/A"; // Nếu không có ngày sinh, hiển thị N/A
       }
+      if (appointment.startTime && appointment.endTime) {
+        appointment.appointmentTime = `${appointment.startTime} - ${appointment.endTime}`;
+      } else {
+        appointment.appointmentTime = "N/A";
+      }
     });
 
-    // // Log danh sách cuộc hẹn để kiểm tra dữ liệu
-    // console.log("Danh sách cuộc hẹn:", JSON.stringify(appointments, null, 2));
 
     res.render("admin/pages/appointment/index", {
       pageTitle: "Thông tin cuộc hẹn",

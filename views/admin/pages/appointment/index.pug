@@ -20,6 +20,7 @@ block main
                     th Appointment Date
                     th Appointment Time
                     th Status
+                    th Note
                     //- th.text-right Action
                 tbody
                   each appointment in appointments
@@ -27,8 +28,8 @@ block main
                       td= appointment.user_id.fullName
                       td= appointment.age
                       td= appointment.doctor_id.fullName
-                      td= appointment.facility_id.name
-                      td= new Date(appointment.date).toLocaleDateString("vi-VN")
+                      td= appointment.doctor_id && appointment.doctor_id.facility_id ? appointment.doctor_id.facility_id.name : "N/A"
+                      td= new Date(appointment.appointmentDate).toLocaleDateString("vi-VN")
                       td= appointment.appointmentTime
                       td
                         if appointment.status === "pending"
@@ -39,6 +40,7 @@ block main
                           span.custom-badge.status-gray Completed
                         else if appointment.status === "cancelled"
                           span.custom-badge.status-red Cancelled
+                      td= appointment.notes || "Không có ghi chú"
                       //- td.text-right
                       //-   .dropdown.dropdown-action
                       //-     a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')

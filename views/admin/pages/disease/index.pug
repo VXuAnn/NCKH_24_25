@@ -38,12 +38,12 @@ block main
                       //- td= disease.label
                       //- td= disease.desc
                       td 
-                        span.truncate(data-full=disease.label)= disease.label.length > 30 ? disease.label.substring(0, 30) + '...' : disease.label
+                        span.truncate(data-full=disease.label) !{disease.label.length > 30 ? disease.label.substring(0, 30) + '...' : disease.label}
                         if disease.label.length > 30
                           a.text-primary.toggle-text(href='#') Xem thêm
                       td 
-                        span.truncate(data-full=disease.desc)= disease.desc.length > 50 ? disease.desc.substring(0, 50) + '...' : disease.desc
-                        if disease.desc.length > 50
+                        span.truncate(data-full=disease.desc, data-length=disease.desc.length) !{disease.desc.length > 50 ? disease.desc.substring(0, 50) + '...' : disease.desc}
+                        if disease.desc && disease.desc.length > 50
                           a.text-primary.toggle-text(href='#') Xem thêm
                       td.text-right
                         a.btn.btn-primary.btn-sm.mr-2(href=`/${prefixAdmin}/disease/edit/${disease._id}`)
@@ -77,15 +77,17 @@ block main
       $(".toggle-text").click(function (e) {
         e.preventDefault();
         let span = $(this).prev(".truncate");
-        let fullText = span.attr("data-full");
+        let fullText = span.attr("data-full"); // Lấy nội dung đầy đủ từ data-full
         let isExpanded = span.hasClass("expanded");
 
         if (isExpanded) {
+          // Thu gọn lại: chỉ hiển thị 30 hoặc 50 ký tự đầu + "..."
           let shortText = fullText.length > 30 ? fullText.substring(0, 30) + "..." : fullText;
-          span.text(shortText);
+          span.html(shortText); // Dùng .html() để render HTML nếu có
           $(this).text("Xem thêm");
         } else {
-          span.text(fullText);
+          // Mở rộng: hiển thị toàn bộ nội dung với HTML
+          span.html(fullText); // Render toàn bộ nội dung dưới dạng HTML
           $(this).text("Thu gọn");
         }
 
