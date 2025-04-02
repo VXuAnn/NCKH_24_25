@@ -1,0 +1,43 @@
+extends ../../layouts/default.pug
+
+block main 
+  .page-wrapper
+    .content
+      .row
+        .col-sm-4.col-3
+          h4.page-title Giờ Làm Việc
+      .row
+        .col-md-12
+          .table-responsive
+            table.table.table-striped.custom-table
+              thead
+                tr
+                  th STT
+                  th Ngày Trong Tuần
+                  th Khung Giờ
+                  th.text-right Hành Động
+              tbody
+                each item in workingHours
+                  tr
+                    td #{item.index}
+                    td #{item.dayName}
+                    td
+                      ul
+                        each slot in item.slots
+                          li #{slot.startTime} - #{slot.endTime} (#{slot.duration} phút)
+                    td.text-right
+                        a.btn.btn-primary(href=`/${prefixAdmin}/workingHour/edit/${item.id}`)
+                          i.fa.fa-pencil.m-r-5
+                          | Edit
+
+  .sidebar-overlay(data-reff='')
+  script(src='/assets/js/jquery-3.2.1.min.js')
+  script(src='/assets/js/popper.min.js')
+  script(src='/assets/js/bootstrap.min.js')
+  script(src='/assets/js/jquery.dataTables.min.js')
+  script(src='/assets/js/dataTables.bootstrap4.min.js')
+  script(src='/assets/js/jquery.slimscroll.js')
+  script(src='/assets/js/select2.min.js')
+  script(src='/assets/js/moment.min.js')
+  script(src='/assets/js/bootstrap-datetimepicker.min.js')
+  script(src='/assets/js/app.js')

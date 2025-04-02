@@ -15,21 +15,25 @@ block main
                   tr
                     th Patient Name
                     th Age
+                    th Gender 
+                    th Phone Number 
                     th Doctor Name
                     th Facility
                     th Appointment Date
                     th Appointment Time
                     th Status
                     th Note
-                    //- th.text-right Action
                 tbody
                   each appointment in appointments
                     tr
-                      td= appointment.user_id.fullName
+                      td= appointment.patientInfo.fullName
                       td= appointment.age
-                      td= appointment.doctor_id.fullName
-                      td= appointment.doctor_id && appointment.doctor_id.facility_id ? appointment.doctor_id.facility_id.name : "N/A"
-                      td= new Date(appointment.appointmentDate).toLocaleDateString("vi-VN")
+                      td= appointment.patientInfo.gender
+                      td= appointment.patientInfo.phone
+                      td= appointment.doctor_id ? appointment.doctor_id.fullName : "N/A"
+                      td= appointment.facility_id ? appointment.facility_id.name : "N/A"
+                      //- td= appointment.doctor_id && appointment.doctor_id.facility_id ? appointment.doctor_id.facility_id.name : "N/A"
+                      td= appointment.formattedDate
                       td= appointment.appointmentTime
                       td
                         if appointment.status === "pending"
@@ -40,27 +44,7 @@ block main
                           span.custom-badge.status-gray Completed
                         else if appointment.status === "cancelled"
                           span.custom-badge.status-red Cancelled
-                      td= appointment.notes || "Không có ghi chú"
-                      //- td.text-right
-                      //-   .dropdown.dropdown-action
-                      //-     a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
-                      //-       i.fa.fa-ellipsis-v
-                      //-     .dropdown-menu.dropdown-menu-right
-                      //-       a.dropdown-item(href='edit-appointment.html')
-                      //-         i.fa.fa-pencil.m-r-5
-                      //-         |  Edit
-                      //-       a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_appointment')
-                      //-         i.fa.fa-trash-o.m-r-5
-                      //-         |  Delete
-      #delete_appointment.modal.fade.delete-modal(role='dialog')
-        .modal-dialog.modal-dialog-centered
-          .modal-content
-            .modal-body.text-center
-              img(src='/assets/img/sent.png' alt='' width='50' height='46')
-              h3 Are you sure want to delete this Appointment?
-              .m-t-20
-                a.btn.btn-white(href='#' data-dismiss='modal') Close
-                button.btn.btn-danger(type='submit') Delete
+                      td= appointment.desc || "Không có ghi chú"
       .sidebar-overlay(data-reff='')
       script.
         $(function () {

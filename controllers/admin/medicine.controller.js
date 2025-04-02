@@ -73,3 +73,67 @@ module.exports.createPost = async (req, res) => {
     res.status(500).json({ error: "Có lỗi xảy ra, vui lòng thử lại." });
   }
 };
+// [GET] /admin/medicine/edit/:id
+module.exports.edit = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const medicine = await Medicine.findById(id);
+    const typemedicines = await TypeMedicine.find({ deleted: false });
+
+    if (!medicine) {
+      return res.status(404).send("Không tìm thấy thuốc");
+    }
+
+    res.render("admin/pages/medicine/edit", {
+      pageTitle: "Edit Medicine",
+      medicine: medicine,
+      typemedicines: typemedicines
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Lỗi server");
+  }
+};
+
+// [PATCH] /admin/medicine/edit/:id
+module.exports.editPatch = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let { name, type, price, stock, status } = req.body;
+
+    // Tạo object chỉ chứa các field được gửi lên
+    const updateData = {};
+    if (name) updateData.name = name;
+    if (type) updateData.type = type;
+    if (price) {
+      price = parseFloat(price);
+      if (isNaN(price) || price < 0) {
+        return res.status(400).json({ error: "Giá thuốc không hợp lệ." });
+      }
+      updateData.price = price;
+    }
+    if (stock) {
+      stock = parseInt(stock);
+      if (isNaN(stock) || stock < 0) {
+        return res.status(400).json({ error: "Số lượng tồn kho không hợp lệ." });
+      }
+      updateData.stock = stock;
+    }
+    if (status) updateData.status = status;
+
+    // Kiểm tra xem có dữ liệu để cập nhật không
+    if (Object.keys(updateData).length === 0) {
+      return res.status(400).json({ error: "Không có dữ liệu để cập nhật." });
+    }
+
+    await Medicine.updateOne(
+      { _id: id },
+      { $set: updateData }
+    );
+
+    res.redirect(`/${systemConfig.prefixAdmin}/medicine`);
+  } catch (error) {
+    console.error("Lỗi khi cập nhật thuốc:", error);
+    res.status(500).json({ error: "Có lỗi xảy ra, vui lòng thử lại." });
+  }
+};

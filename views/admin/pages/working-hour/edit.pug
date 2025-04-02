@@ -1,0 +1,64 @@
+extends ../../layouts/default.pug
+
+block main
+  .main-wrapper
+    .page-wrapper
+      .content
+        .row
+          .col-lg-8.offset-lg-2
+            h4.page-title Sửa Giờ Làm Việc
+        .row
+          .col-lg-8.offset-lg-2
+            form(action=`/${prefixAdmin}/workingHour/edit/${workingHour.id}?_method=PATCH` method="POST")
+              // Ngày trong tuần
+              .form-group
+                label Ngày trong tuần
+                select.form-control(name="dayOfWeek" required disabled)
+                  each val, index in ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"]
+                    option(value=index selected=(workingHour.dayOfWeek == index)) #{val}
+                input(type="hidden" name="dayOfWeek" value=workingHour.dayOfWeek)
+              
+              // Buổi sáng
+              .form-group
+                label Thời gian sáng
+                if workingHour.morningSlots && workingHour.morningSlots.length > 0
+                  each slot, idx in workingHour.morningSlots
+                    .row.mb-2
+                      .col-md-4
+                        input.form-control(name="morningStartTime[]" type="text" placeholder="Bắt đầu" value=slot.startTime)
+                      .col-md-4
+                        input.form-control(name="morningEndTime[]" type="text" placeholder="Kết thúc" value=slot.endTime)
+                      .col-md-4
+                        input.form-control(name="morningDuration[]" type="number" placeholder="Phút" value=slot.duration)
+                else
+                  .row.mb-2
+                    .col-md-4
+                      input.form-control(name="morningStartTime[]" type="text" placeholder="Bắt đầu")
+                    .col-md-4
+                      input.form-control(name="morningEndTime[]" type="text" placeholder="Kết thúc")
+                    .col-md-4
+                      input.form-control(name="morningDuration[]" type="number" placeholder="Phút")
+              
+              // Buổi chiều
+              .form-group
+                label Thời gian chiều
+                if workingHour.afternoonSlots && workingHour.afternoonSlots.length > 0
+                  each slot, idx in workingHour.afternoonSlots
+                    .row.mb-2
+                      .col-md-4
+                        input.form-control(name="afternoonStartTime[]" type="text" placeholder="Bắt đầu" value=slot.startTime)
+                      .col-md-4
+                        input.form-control(name="afternoonEndTime[]" type="text" placeholder="Kết thúc" value=slot.endTime)
+                      .col-md-4
+                        input.form-control(name="afternoonDuration[]" type="number" placeholder="Phút" value=slot.duration)
+                else
+                  .row.mb-2
+                    .col-md-4
+                      input.form-control(name="afternoonStartTime[]" type="text" placeholder="Bắt đầu")
+                    .col-md-4
+                      input.form-control(name="afternoonEndTime[]" type="text" placeholder="Kết thúc")
+                    .col-md-4
+                      input.form-control(name="afternoonDuration[]" type="number" placeholder="Phút")
+              
+              .text-center.m-t-20
+                button.btn.btn-primary.submit-btn(type="submit") Cập nhật

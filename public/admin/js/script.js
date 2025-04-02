@@ -92,3 +92,7 @@ document.addEventListener("click", (event) => {
 });
 
 // Hết Xóa doctor
+
+// Trong script.js
+const element = document.querySelector('.some-class');
+element.classList.add('active'); // Nếu .some-class không tồn tại, element sẽ là null

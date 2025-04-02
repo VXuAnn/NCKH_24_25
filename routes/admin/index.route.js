@@ -11,7 +11,8 @@ const medicineRoute = require("./medicine.route");
 const accountRoute =require("./account.route");
 const roleRoute =require("./role.route")
 const diseaseRoute =require("./disease.route")
-
+const loginRoute = require("./auth.route")
+const workingHourRoute = require("./workingHour.route")
 
 module.exports.index = (app) => {
   const path = `/${systemConfig.prefixAdmin}`;
@@ -53,4 +54,6 @@ module.exports.index = (app) => {
   app.use(`${path}/accounts`,accountRoute);
   app.use(`${path}/roles`,roleRoute);
   app.use(`${path}/disease`,diseaseRoute);
+  app.use(`${path}/auth`, authRoute);
+  app.use(`${path}/workingHour`, workingHourRoute);
 }
