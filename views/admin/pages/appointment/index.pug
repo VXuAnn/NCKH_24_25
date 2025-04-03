@@ -42,7 +42,7 @@ block main
                           span.custom-badge.status-blue Confirmed
                         else if appointment.status === "completed"
                           span.custom-badge.status-gray Completed
-                        else if appointment.status === "cancelled"
+                        else if appointment.status === "canceled"
                           span.custom-badge.status-red Cancelled
                       td= appointment.desc || "Không có ghi chú"
       .sidebar-overlay(data-reff='')
