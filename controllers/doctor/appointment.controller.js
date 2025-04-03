@@ -4,7 +4,8 @@ const Appointment = require("../../models/appointment.model");
 // [GET] /admin/appointment
 module.exports.index = async (req, res) => {
   try {
-    const appointments = await Appointment.find({})
+    const doctorId = "67d82d17081ef00f6b96066b";
+    const appointments = await Appointment.find({ doctor_id: doctorId })
       .populate("doctor_id", "fullName")
       .populate("facility_id", "name")
       .sort({ date: -1 })
@@ -52,7 +53,7 @@ module.exports.updateStatus = async (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
-
+    console.log("Status:", req.body);
     const validStatuses = ["pending", "confirmed", "cancelled", "completed"];
     if (!validStatuses.includes(status)) {
       return res.status(400).json({ message: "Invalid status value" });

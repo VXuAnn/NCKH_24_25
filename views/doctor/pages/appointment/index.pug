@@ -54,9 +54,17 @@ block main
         });
         $(document).ready(function() {
           $('.status-select').change(function() {
-            const appointmentId = $(this).data('id');
-            const newStatus = $(this).val();
-            
+            const $select = $(this);
+            const appointmentId = $select.data('id');
+            const newStatus = $select.val();
+            // Log the status change to the console
+            console.log(`Appointment ID: ${appointmentId} - New Status: ${newStatus}`);
+            // Optimistically update the UI immediately
+            $select.find('option').each(function() {
+              $(this).prop('selected', $(this).val() === newStatus);
+            });
+
+            // Send AJAX request to update the backend
             $.ajax({
               url: `/admin/appointment/update-status/${appointmentId}`,
               method: 'POST',
@@ -68,8 +76,9 @@ block main
               },
               error: function(error) {
                 console.error(error);
-                alert('Error updating status');
+                alert('Error updating status. Please refresh the page.');
               }
             });
           });
+
         });
