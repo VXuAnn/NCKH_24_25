@@ -82,9 +82,9 @@ module.exports.editPatch = async (req, res) => {
   try {
     const id = req.params.id;
     const { title, label, description } = req.body;
-
+    console.log(req.body);
     await Disease.updateOne(
-      { _id: id, deleted: false },
+      { _id: id},
       {
         name: title,
         label: label,

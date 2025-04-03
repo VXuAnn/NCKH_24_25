@@ -29,7 +29,7 @@ block main
                 tr
                   th Name
                   th Label
-                  th Description
+                  //- th Description
                   th.text-right Action
                 tbody
                   each disease in diseases
@@ -41,10 +41,10 @@ block main
                         span.truncate(data-full=disease.label) !{disease.label.length > 30 ? disease.label.substring(0, 30) + '...' : disease.label}
                         if disease.label.length > 30
                           a.text-primary.toggle-text(href='#') Xem thêm
-                      td 
-                        span.truncate(data-full=disease.desc, data-length=disease.desc.length) !{disease.desc.length > 50 ? disease.desc.substring(0, 50) + '...' : disease.desc}
-                        if disease.desc && disease.desc.length > 50
-                          a.text-primary.toggle-text(href='#') Xem thêm
+                      //- td 
+                      //-   span.truncate(data-full=disease.desc, data-length=disease.desc.length) !{disease.desc.length > 50 ? disease.desc.substring(0, 50) + '...' : disease.desc}
+                      //-   if disease.desc && disease.desc.length > 50
+                      //-     a.text-primary.toggle-text(href='#') Xem thêm
                       td.text-right
                         a.btn.btn-primary.btn-sm.mr-2(href=`/${prefixAdmin}/disease/edit/${disease._id}`)
                           i.fa.fa-pencil

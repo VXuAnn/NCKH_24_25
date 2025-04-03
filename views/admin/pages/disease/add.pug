@@ -25,7 +25,16 @@ block main
                 )
                 label(for="title")
                   |  Label
-                textarea.form-control(id="label" name="label")
+                input(
+                  type="text"
+                  class="form-control"
+                  id="label"
+                  name="label"
+                  required
+                )
+                //- label(for="title")
+                //-   |  Label
+                //- textarea.form-control(id="label" name="label")
                 label(for="desc")
                   |  Mô tả
                 textarea.form-control(id="desc" name="description" rows="5" textarea-mce)
