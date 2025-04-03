@@ -7,60 +7,41 @@ block main
         .row
           .col-sm-4.col-3
             h4.page-title Appointments
-          //- .col-sm-8.col-9.text-right.m-b-20
-          //-   a.btn.btn.btn-primary.btn-rounded.float-right(href='add-appointment.html')
-          //-     i.fa.fa-plus
-          //-     |  Add Appointment
         .row
           .col-md-12
             .table-responsive
               table.table.table-striped.custom-table
                 thead
-                  thead
                   tr
                     th Patient Name
-                    th Age
+                    th Age 
+                    th Gender 
+                    th Phone Number 
                     th Doctor Name
-                    th Facility
+                    th Facility 
                     th Appointment Date
                     th Appointment Time
                     th Status
+                    th Note
                 tbody
                   each appointment in appointments
                     tr
-                      td= appointment.patientId.fullName
+                      td= appointment.patientInfo.fullName
                       td= appointment.age
-                      td= appointment.doctorId.fullName
-                      td= appointment.department
-                      td= new Date(appointment.appointmentDate).toLocaleDateString("vi-VN")
+                      td= appointment.patientInfo.gender
+                      td= appointment.patientInfo.phone
+                      td= appointment.doctor_id ? appointment.doctor_id.fullName : "N/A"
+                      td= appointment.facility_id ? appointment.facility_id.name : "N/A"
+                      //- td= appointment.doctor_id && appointment.doctor_id.facility_id ? appointment.doctor_id.facility_id.name : "N/A"
+                      td= appointment.formattedDate
                       td= appointment.appointmentTime
                       td
-                        if appointment.status === "Scheduled"
-                          span.custom-badge.status-green Scheduled
-                        else if appointment.status === "Completed"
-                          span.custom-badge.status-blue Completed
-                        else
-                          span.custom-badge.status-red Cancelled
-                      td.text-right
-                        .dropdown.dropdown-action
-                          a.action-icon.dropdown-toggle(href='#' data-toggle='dropdown' aria-expanded='false')
-                            i.fa.fa-ellipsis-v
-                          .dropdown-menu.dropdown-menu-right
-                            a.dropdown-item(href='edit-appointment.html')
-                              i.fa.fa-pencil.m-r-5
-                              |  Edit
-                            a.dropdown-item(href='#' data-toggle='modal' data-target='#delete_appointment')
-                              i.fa.fa-trash-o.m-r-5
-                              |  Delete
-      #delete_appointment.modal.fade.delete-modal(role='dialog')
-        .modal-dialog.modal-dialog-centered
-          .modal-content
-            .modal-body.text-center
-              img(src='/assets/img/sent.png' alt='' width='50' height='46')
-              h3 Are you sure want to delete this Appointment?
-              .m-t-20
-                a.btn.btn-white(href='#' data-dismiss='modal') Close
-                button.btn.btn-danger(type='submit') Delete
+                        select.status-select(data-id=appointment._id)
+                          option(value="pending" selected=appointment.status === "pending") Pending
+                          option(value="confirmed" selected=appointment.status === "confirmed") Confirmed
+                          option(value="completed" selected=appointment.status === "completed") Completed
+                          option(value="cancelled" selected=appointment.status === "cancelled") Cancelled
+                      td= appointment.desc || "Không có ghi chú"
       .sidebar-overlay(data-reff='')
       script.
         $(function () {
@@ -71,4 +52,24 @@ block main
         format: 'LT'
         });
         });
-      // appointments23:20
+        $(document).ready(function() {
+          $('.status-select').change(function() {
+            const appointmentId = $(this).data('id');
+            const newStatus = $(this).val();
+            
+            $.ajax({
+              url: `/admin/appointment/update-status/${appointmentId}`,
+              method: 'POST',
+              data: { status: newStatus },
+              success: function(response) {
+                if (response.success) {
+                  alert('Status updated successfully');
+                }
+              },
+              error: function(error) {
+                console.error(error);
+                alert('Error updating status');
+              }
+            });
+          });
+        });

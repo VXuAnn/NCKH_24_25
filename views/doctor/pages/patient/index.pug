@@ -6,6 +6,7 @@ block main
         .row
           .col-sm-4.col-3
             h4.page-title Patients
+        .row
           .col-md-12
             .table-responsive
               table.table.table-border.table-striped.custom-table.datatable.mb-0
@@ -19,11 +20,13 @@ block main
                 tbody
                   each patient in patients
                     tr
-                      td= patient.fullName
-                      td= patient.dob.toISOString().split("T")[0] 
-                      td= patient.address
-                      td= patient.phone
-                      td= patient.email
+                      td
+                        img.rounded-circle.m-r-5(width='28' height='28' src='/assets/img/user.jpg' alt='')
+                        |  #{patient.fullName}
+                      td #{new Date().getFullYear() - new Date(patient.dateOfBirth).getFullYear()} 
+                      td #{patient.address}
+                      td #{patient.phone}
+                      td #{patient.email}
 
   .sidebar-overlay(data-reff='')
 
